@@ -1,11 +1,7 @@
 import "./Footer.css";
 
 function Footer() {
-  return (
-    <footer>
-     Основное
-    </footer>
-  );
+  return <footer>Подвал</footer>;
 }
 
 export default Footer;

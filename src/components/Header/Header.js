@@ -1,11 +1,7 @@
 import "./Header.css";
 
 function Header() {
-  return (
-    <header>
-     Заголовок
-    </header>
-  );
+  return <header className="header">Шапка</header>;
 }
 
 export default Header;
