@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "Mplus";
+    src: url("./mplus1p/m-plus-1p.woff2") format("woff2"), url("./mplus1p/m-plus-1p.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Mplus";
+    src: url("./mplus1p/m-plus-1p-500.woff2") format("woff2"), url("./mplus1p/m-plus-1p-500.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Raleway";
+    src: url("./raleway/raleway.woff2") format("woff2"), url("./raleway/raleway.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Raleway";
+    src: url("./raleway/raleway-500.woff2") format("woff2"), url("./raleway/raleway-500.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+  }
