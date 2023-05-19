@@ -5,18 +5,18 @@ import NewCollectionSection from "./NewCollectionSection/NewCollectionSection";
 import FillFormSection from "./FillFormSection/FillFormSection";
 import OurHistorySection from "./OurHistorySection/OurHistorySection";
 import SubscribeSection from "../SubscribeSection/BestSellersSection";
-import MapSection from "../MapSection/MapSection"
+import MapSection from "../MapSection/MapSection";
 
 function Main() {
   return (
     <main>
-      <IntroSection/>
-      <BestSellersSection/>
-      <NewCollectionSection/>
-      <FillFormSection/>
-      <OurHistorySection/>
-      <SubscribeSection/>
-      <MapSection/>
+      <IntroSection />
+      <BestSellersSection />
+      <NewCollectionSection />
+      <FillFormSection />
+      <OurHistorySection />
+      <SubscribeSection />
+      <MapSection />
     </main>
   );
 }

@@ -1,14 +1,14 @@
 import "./Header.scss";
+import { useState } from "react";
 import logoSvg from "../../images/logo.svg";
 import profileSvg from "../../images/profile.svg";
 import cartSvg from "../../images/cart.svg";
 import burger from "../../images/burger.svg";
 import close from "../../images/close.svg";
-import { useState } from "react";
 
 function Header() {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
-  function handleBurgerClick () {
+  function handleBurgerClick() {
     setIsMenuOpened(!isMenuOpened);
   }
   return (
