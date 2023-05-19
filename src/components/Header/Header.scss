@@ -1,0 +1,165 @@
+$size-of-tablet: 800px;
+
+.header {
+  border-bottom: 1px solid transparent;
+  display: grid;
+  grid-template-areas: "logo nav buttons";
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: 103px;
+  align-items: center;
+  box-sizing: border-box;
+  position: sticky;
+  background-color: inherit;
+
+  @media screen and (max-width: $size-of-tablet) {
+    grid-template-areas:
+      "burger logo buttons"
+      "nav nav nav"
+      "contacts contacts contacts";
+  }
+
+  &_colored {
+    border-color: var(--color-of-border-nav);
+    background-color: var(--color-of-main-backgroud);
+  }
+
+  &__logo-link {
+    grid-area: logo;
+    display: flex;
+    justify-content: center;
+    margin-left: 98px;
+    justify-self: center;
+
+    @media screen and (max-width: $size-of-tablet) {
+      margin-left: 45px;
+    }
+    &:hover .header__logo {
+      transform: scale(1.1);
+    }
+  }
+  &__logo {
+    transition: transform 0.2s ease;
+    width: 131px;
+    height: 21px;
+  }
+  &__burger-button {
+    display: none;
+
+    @media screen and (max-width: $size-of-tablet) {
+      display: block;
+      grid-area: burger;
+      height: 24px;
+      width: 18px;
+      padding: 0;
+      border: none;
+      background-color: inherit;
+      cursor: pointer;
+      margin-left: 45px;
+    }
+  }
+  &__nav-area {
+    display: flex;
+    justify-content: end;
+    padding: 0 52px;
+    grid-area: nav;
+
+    @media screen and (max-width: $size-of-tablet) {
+      border-top: 1px solid var(--color-of-border-nav);
+      justify-content: start;
+      padding: 0;
+      padding-left: 45px;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    gap: 33px;
+
+    @media screen and (max-width: $size-of-tablet) {
+      flex-direction: column;
+      padding: 40px 0 60px;
+      gap: 26px;
+    }
+  }
+  &__nav-item {
+    list-style: none;
+    padding: 0;
+    font-family: var(--font-of-text);
+    font-size: 16px;
+    letter-spacing: 0.7px;
+
+    @media screen and (max-width: $size-of-tablet) {
+      font-size: 32px;
+      letter-spacing: 0.3px;
+    }
+  }
+  &__nav-link {
+    color: var(--color-of-text);
+    text-decoration: none;
+    outline: none;
+    position: relative;
+    &::before,
+    &::after {
+      top: 0;
+      position: absolute;
+      font-size: 20px;
+      font-family: var(--font-of-text);
+      color: var(--color-of-text);
+      display: inline-block;
+      opacity: 0;
+      transition: transform 0.3s, opacity 0.2s;
+      @media screen and (max-width: $size-of-tablet) {
+        font-size: 32px;
+      }
+    }
+    &::before {
+      left: -20px;
+      margin-right: 11px;
+      content: "[";
+      transform: translateX(20px);
+    }
+    &::after {
+      right: -20px;
+      margin-left: 11px;
+      content: "]";
+      transform: translateX(-20px);
+    }
+    &:hover,
+    &:focus {
+      &::before,
+      &::after {
+        opacity: 1;
+        transform: translateX(0px);
+      }
+    }
+  }
+  &__button-area {
+    display: flex;
+    gap: 29px;
+    grid-area: buttons;
+    padding-right: 99px;
+
+    @media screen and (max-width: $size-of-tablet) {
+      padding-right: 45px;
+    }
+  }
+  &__button {
+    height: 21px;
+    width: 18px;
+    padding: 0;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    outline: 2px solid transparent;
+    outline-offset: 4px;
+    border-radius: 50%;
+    transition: outline-color 0.3s ease, outline-offset 0.3s ease;
+    &:hover,
+    &:focus {
+      outline-color: var(--color-of-text);
+      outline-offset: 8px;
+    }
+  }
+}
