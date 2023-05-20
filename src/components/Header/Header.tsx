@@ -12,7 +12,7 @@ function Header() {
     setIsMenuOpened(!isMenuOpened);
   }
   return (
-    <header className="header header_colored">
+    <header className="header">
       <a className="header__logo-link" href="#">
         <img className="header__logo" alt="Логотип Maroon" src={logoSvg} />
       </a>

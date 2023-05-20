@@ -8,8 +8,11 @@ $size-of-tablet: 800px;
   grid-template-rows: 103px;
   align-items: center;
   box-sizing: border-box;
-  position: sticky;
+  position: fixed;
+  width: 100%;
+  max-width: 1366px;
   background-color: inherit;
+  z-index: 1000;
 
   @media screen and (max-width: $size-of-tablet) {
     grid-template-areas:
@@ -20,7 +23,7 @@ $size-of-tablet: 800px;
 
   &_colored {
     border-color: var(--color-of-border-nav);
-    background-color: var(--color-of-main-backgroud);
+    background-color: var(--color-of-main-background);
   }
 
   &__logo-link {
@@ -60,7 +63,7 @@ $size-of-tablet: 800px;
   &__nav-area {
     display: flex;
     justify-content: end;
-    padding: 0 52px;
+    padding: 0 49px;
     grid-area: nav;
 
     @media screen and (max-width: $size-of-tablet) {
@@ -75,7 +78,7 @@ $size-of-tablet: 800px;
     display: flex;
     padding: 0;
     margin: 0;
-    gap: 33px;
+    gap: 36px;
 
     @media screen and (max-width: $size-of-tablet) {
       flex-direction: column;
@@ -88,7 +91,7 @@ $size-of-tablet: 800px;
     padding: 0;
     font-family: var(--font-of-text);
     font-size: 16px;
-    letter-spacing: 0.7px;
+    letter-spacing: 0;
 
     @media screen and (max-width: $size-of-tablet) {
       font-size: 32px;

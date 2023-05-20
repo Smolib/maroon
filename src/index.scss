@@ -2,18 +2,20 @@
 @import url(./vendor/fonts/fonts.css);
 
 :root {
-  --font-of-title: Mplus;
-  --font-of-text: Raleway;
+  --font-of-text: Mplus;
+  --font-of-title: Raleway;
   --color-of-text: #122947;
   --color-of-main-background: #f9f7f6;
   --color-of-border-nav: #dbdce0;
   --size-of-tablet: 800px;
   --size-of-mobile: 400px;
+  --color-of-border-button: #B3BAC1;
 }
 html {
   scroll-behavior: smooth;
   color: var(--color-of-text);
   background-color: var(--color-of-main-background);
+  font-family: var(--font-of-text);
 }
 
 body {
@@ -23,7 +25,9 @@ body {
 }
 
 .root {
-  max-width: 1400px;
-  margin: 0 auto;
+  width: 100%;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

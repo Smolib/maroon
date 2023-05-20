@@ -1,4 +1,4 @@
-import "./Main.css";
+import "./Main.scss";
 import IntroSection from "./IntroSection/IntroSection";
 import BestSellersSection from "./BestSellersSection/BestSellersSection";
 import NewCollectionSection from "./NewCollectionSection/NewCollectionSection";
@@ -9,7 +9,7 @@ import MapSection from "../MapSection/MapSection";
 
 function Main() {
   return (
-    <main>
+    <main className="main">
       <IntroSection />
       <BestSellersSection />
       <NewCollectionSection />
