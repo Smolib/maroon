@@ -11,11 +11,10 @@ function Header() {
   const [isMenuColored, setIsMenuColored] = useState(false);
   const [scroll, setScroll] = useState(0);
 
-  const handleScroll = () => {
-    setScroll(window.scrollY);
-  };
-
   useEffect(() => {
+    const handleScroll = () => {
+      setScroll(window.scrollY);
+    };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -29,7 +28,9 @@ function Header() {
   }
   return (
     <header
-      className={`header ${(isMenuColored || scroll > 0) ? "header_colored" : ""}`}
+      className={`header ${
+        isMenuColored || scroll > 0 ? "header_colored" : ""
+      }`}
     >
       <a className="header__logo-link" href="#">
         <img className="header__logo" alt="Логотип Maroon" src={logoSvg} />

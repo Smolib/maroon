@@ -25,7 +25,6 @@ $size-of-tablet: 800px;
   &_colored {
     border-color: var(--color-of-border-nav);
     background-color: var(--color-of-main-background);
-
   }
 
   &__logo-link {
@@ -127,6 +126,7 @@ $size-of-tablet: 800px;
       transition: transform 0.3s, opacity 0.2s;
       @media screen and (max-width: $size-of-tablet) {
         font-size: 32px;
+        top: 4px;
       }
     }
     &::before {
