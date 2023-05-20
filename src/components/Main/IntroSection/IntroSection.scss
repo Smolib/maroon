@@ -3,12 +3,15 @@ $size-of-mobile: 450px;
 
 .intro {
   padding: 103px 0 70px;
-  position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
   background-image: url("../../../images/intro-background.png");
   background-repeat: no-repeat;
+
+  @media screen and (max-width: $size-of-mobile) {
+    padding: 268px 0 58px;
+  }
 
   &__wrapper {
     max-width: 1366px;
@@ -18,13 +21,16 @@ $size-of-mobile: 450px;
     box-sizing: border-box;
     padding: 28px 0 0;
     margin: 0 calc((100% - 1060px) / 2 + 15px);
+    position: relative;
 
     @media screen and (max-width: $size-of-tablet) {
       margin: 0 45px;
+      gap: 40px;
     }
 
     @media screen and (max-width: $size-of-mobile) {
       margin: 0 15px;
+      gap: 0;
     }
   }
 
@@ -34,12 +40,15 @@ $size-of-mobile: 450px;
     flex-direction: column;
     align-items: center;
     position: absolute;
-    top: calc(50% - 47px);
+    top: calc(50% - 63px);
     left: 50%;
     transform: translate(-50%, -50%);
 
     @media screen and (max-width: $size-of-tablet) {
-      top: calc(50% - 29px);
+      top: calc(50% - 45px);
+    }
+    @media screen and (max-width: $size-of-mobile) {
+      top: -90px;
     }
   }
 
@@ -54,6 +63,9 @@ $size-of-mobile: 450px;
     @media screen and (max-width: $size-of-tablet) {
       font-size: 54px;
     }
+    @media screen and (max-width: $size-of-mobile) {
+      font-size: 42px;
+    }
   }
 
   &__description {
@@ -63,6 +75,12 @@ $size-of-mobile: 450px;
     font-weight: 400;
     line-height: 26px;
     margin: 12px 0 0;
+
+    @media screen and (max-width: $size-of-mobile) {
+      font-size: 16px;
+      margin-top: 8px;
+      line-height: 22px;
+    }
   }
 
   &__button {
@@ -74,6 +92,11 @@ $size-of-mobile: 450px;
     font-size: 16px;
     line-height: 22px;
     cursor: pointer;
+    @media screen and (max-width: $size-of-mobile) {
+      font-size: 14px;
+      line-height: 20px;
+      margin-top: 23px;
+    }
   }
 
   &__link {
@@ -87,6 +110,16 @@ $size-of-mobile: 450px;
     margin-top: 8.5px;
     font-size: 16px;
     letter-spacing: 0.15px;
+
+    @media screen and (max-width: $size-of-mobile) {
+      font-size: 12px;
+      margin-top: 5px;
+    }
+  }
+  &__arrow {
+    @media screen and (max-width: $size-of-mobile) {
+      width: 23px;
+    }
   }
 
   &__figure {
@@ -95,11 +128,13 @@ $size-of-mobile: 450px;
 
   &__picture {
     max-width: 330px;
-    max-height: 422px;
-
+    min-width: 130px;
+    width: 100%;
     @media screen and (max-width: $size-of-tablet) {
       max-width: 245px;
-      max-height: 322px;
+    }
+    @media screen and (max-width: $size-of-mobile) {
+      max-width: 130px;
     }
   }
 }

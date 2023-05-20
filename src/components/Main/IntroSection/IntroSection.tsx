@@ -10,8 +10,11 @@ import arrow from "../../../images/arrow.svg";
 
 function IntroSection() {
   const [windowSize, setWindowSize] = useState(0);
+  const [imageLeft, setImageLeft] = useState("");
+  const [imageRight, setImageRight] = useState("");
 
   useEffect(() => {
+    setWindowSize(window.innerWidth);
     const handleWindowSize = () => {
       setWindowSize(window.innerWidth);
     };
@@ -19,29 +22,28 @@ function IntroSection() {
     return () => window.removeEventListener("scroll", handleWindowSize);
   }, []);
 
-  let imageLeft;
-  let imageRight;
+  useEffect(() => {
+    switch (true) {
+    case windowSize > 800:
+      setImageLeft(introPic1);
+      setImageRight(introPic2);
+      break;
 
-  switch (true) {
-  case windowSize > 800:
-    imageLeft = introPic1;
-    imageRight = introPic2;
-    break;
+    case windowSize <= 800 && windowSize > 450:
+      setImageLeft(introPic1Tablet);
+      setImageRight(introPic2Tablet);
+      break;
 
-  case windowSize < 800 && windowSize > 400:
-    imageLeft = introPic1Tablet;
-    imageRight = introPic2Tablet;
-    break;
+    case windowSize <= 450:
+      setImageLeft(introPic1Mobile);
+      setImageRight(introPic2Mobile);
+      break;
 
-  case windowSize < 400:
-    imageLeft = introPic1Mobile;
-    imageRight = introPic2Mobile;
-    break;
-
-  default:
-    imageLeft = introPic1;
-    imageRight = introPic2;
-  }
+    default:
+      setImageLeft(introPic1);
+      setImageRight(introPic2);
+    }
+  }, [windowSize]);
 
   return (
     <section className="intro">
