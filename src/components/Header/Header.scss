@@ -13,6 +13,7 @@ $size-of-tablet: 800px;
   max-width: 1366px;
   background-color: inherit;
   z-index: 1000;
+  transition: border-color 1s, background-color 1s;
 
   @media screen and (max-width: $size-of-tablet) {
     grid-template-areas:
@@ -24,6 +25,7 @@ $size-of-tablet: 800px;
   &_colored {
     border-color: var(--color-of-border-nav);
     background-color: var(--color-of-main-background);
+
   }
 
   &__logo-link {
@@ -71,6 +73,16 @@ $size-of-tablet: 800px;
       justify-content: start;
       padding: 0;
       padding-left: 45px;
+      visibility: hidden;
+      opacity: 0;
+      max-height: 0;
+      transition: visibility 1s, opacity 0.5s, max-height 1s;
+    }
+    &_open {
+      opacity: 1;
+      visibility: visible;
+      max-height: 500px;
+      transition: visibility 1s, opacity 1s 0.3s, max-height 1s;
     }
   }
 

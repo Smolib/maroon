@@ -1,5 +1,5 @@
 import "./Header.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import logoSvg from "../../images/logo.svg";
 import profileSvg from "../../images/profile.svg";
 import cartSvg from "../../images/cart.svg";
@@ -8,18 +8,40 @@ import close from "../../images/close.svg";
 
 function Header() {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
+  const [isMenuColored, setIsMenuColored] = useState(false);
+  const [scroll, setScroll] = useState(0);
+
+  const handleScroll = () => {
+    setScroll(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    setIsMenuColored(isMenuOpened);
+  }, [isMenuOpened]);
+
   function handleBurgerClick() {
     setIsMenuOpened(!isMenuOpened);
   }
   return (
-    <header className="header">
+    <header
+      className={`header ${(isMenuColored || scroll > 0) ? "header_colored" : ""}`}
+    >
       <a className="header__logo-link" href="#">
         <img className="header__logo" alt="Логотип Maroon" src={logoSvg} />
       </a>
       <button className="header__burger-button" onClick={handleBurgerClick}>
         <img alt="Кнопка меню" src={isMenuOpened ? close : burger} />
       </button>
-      <nav className="header__nav-area">
+      <nav
+        className={`header__nav-area ${
+          isMenuOpened ? "header__nav-area_open" : ""
+        }`}
+      >
         <ul className="header__nav-list">
           <li className="header__nav-item">
             <a className="header__nav-link" href="#">
