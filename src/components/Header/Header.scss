@@ -1,4 +1,5 @@
 $size-of-tablet: 800px;
+$size-of-mobile: 450px;
 
 .header {
   border-bottom: 1px solid transparent;
@@ -22,6 +23,10 @@ $size-of-tablet: 800px;
       "contacts contacts contacts";
   }
 
+  @media screen and (max-width: $size-of-mobile) {
+    grid-template-rows: 74px;
+  }
+
   &_colored {
     border-color: var(--color-of-border-nav);
     background-color: var(--color-of-main-background);
@@ -40,11 +45,18 @@ $size-of-tablet: 800px;
     &:hover .header__logo {
       transform: scale(1.1);
     }
+    @media screen and (max-width: $size-of-mobile) {
+      margin-left: 32px;
+    }
   }
   &__logo {
     transition: transform 0.2s ease;
     width: 131px;
     height: 21px;
+    @media screen and (max-width: $size-of-mobile) {
+      width: 85px;
+      height: 15px;
+    }
   }
   &__burger-button {
     display: none;
@@ -59,6 +71,11 @@ $size-of-tablet: 800px;
       background-color: inherit;
       cursor: pointer;
       margin-left: 45px;
+    }
+
+    @media screen and (max-width: $size-of-mobile) {
+      margin-left: 15px;
+      height: 16px;
     }
   }
   &__nav-area {
@@ -76,6 +93,11 @@ $size-of-tablet: 800px;
       opacity: 0;
       max-height: 0;
       transition: visibility 1s, opacity 0.5s, max-height 1s;
+      align-items: start;
+      flex-direction: column;
+    }
+    @media screen and (max-width: $size-of-mobile) {
+      padding-left: 15px;
     }
     &_open {
       opacity: 1;
@@ -93,8 +115,12 @@ $size-of-tablet: 800px;
 
     @media screen and (max-width: $size-of-tablet) {
       flex-direction: column;
-      padding: 40px 0 60px;
+      padding: 40px 0 54px;
       gap: 26px;
+    }
+    @media screen and (max-width: $size-of-mobile) {
+      padding: 36px 0 47px;
+      gap: 21px;
     }
   }
   &__nav-item {
@@ -106,7 +132,10 @@ $size-of-tablet: 800px;
 
     @media screen and (max-width: $size-of-tablet) {
       font-size: 32px;
-      letter-spacing: 0.3px;
+      letter-spacing: -1px;
+    }
+    @media screen and (max-width: $size-of-mobile) {
+      font-size: 28px;
     }
   }
   &__nav-link {
@@ -128,18 +157,30 @@ $size-of-tablet: 800px;
         font-size: 32px;
         top: 4px;
       }
+      @media screen and (max-width: $size-of-mobile) {
+        font-size: 26px;
+        top: 2px;
+      }
     }
     &::before {
       left: -20px;
       margin-right: 11px;
       content: "[";
       transform: translateX(20px);
+
+      @media screen and (max-width: $size-of-mobile) {
+        left: -10px;
+      }
     }
     &::after {
       right: -20px;
       margin-left: 11px;
       content: "]";
       transform: translateX(-20px);
+
+      @media screen and (max-width: $size-of-mobile) {
+        right: -10px;
+      }
     }
     &:hover,
     &:focus {
@@ -150,6 +191,32 @@ $size-of-tablet: 800px;
       }
     }
   }
+  &__contacts-list {
+    display: none;
+    @media screen and (max-width: $size-of-tablet) {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 25px;
+      margin-bottom: 30px;
+    }
+    @media screen and (max-width: $size-of-mobile) {
+      gap: 30px;
+    }
+  }
+  &__contact-item {
+    list-style: none;
+    padding: 0;
+  }
+  &__contact-link {
+
+    outline: none;
+    &:hover .header__contact-picture,
+    &:focus .header__contact-picture {
+      animation: shake 1.5s;
+      animation-iteration-count: infinite;
+    }
+  }
   &__button-area {
     display: flex;
     gap: 29px;
@@ -158,6 +225,11 @@ $size-of-tablet: 800px;
 
     @media screen and (max-width: $size-of-tablet) {
       padding-right: 45px;
+    }
+
+    @media screen and (max-width: $size-of-mobile) {
+      padding-right: 14px;
+      gap: 14px;
     }
   }
   &__button {
@@ -175,6 +247,12 @@ $size-of-tablet: 800px;
     &:focus {
       outline-color: var(--color-of-text);
       outline-offset: 8px;
+    }
+  }
+  &__button-icon {
+    @media screen and (max-width: $size-of-mobile) {
+      height: 22px;
+      width: 14px;
     }
   }
 }
