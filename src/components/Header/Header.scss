@@ -38,11 +38,13 @@ $size-of-mobile: 450px;
     justify-content: center;
     margin-left: 98px;
     justify-self: center;
+    outline: none;
 
     @media screen and (max-width: $size-of-tablet) {
       margin-left: 45px;
     }
-    &:hover .header__logo {
+    &:hover .header__logo,
+    &:focus .header__logo  {
       transform: scale(1.1);
     }
     @media screen and (max-width: $size-of-mobile) {
@@ -159,7 +161,6 @@ $size-of-mobile: 450px;
       }
       @media screen and (max-width: $size-of-mobile) {
         font-size: 26px;
-        top: 2px;
       }
     }
     &::before {

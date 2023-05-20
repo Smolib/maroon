@@ -30,11 +30,13 @@ $size-of-mobile: 450px;
 
     @media screen and (max-width: $size-of-mobile) {
       margin: 0 15px;
-      gap: 0;
+      gap: 30px;
+      justify-content: space-around;
     }
   }
 
   &__about {
+    z-index: 1;
     width: 280px;
     display: flex;
     flex-direction: column;
@@ -43,6 +45,7 @@ $size-of-mobile: 450px;
     top: calc(50% - 63px);
     left: 50%;
     transform: translate(-50%, -50%);
+    pointer-events: none;
 
     @media screen and (max-width: $size-of-tablet) {
       top: calc(50% - 45px);
@@ -92,6 +95,25 @@ $size-of-mobile: 450px;
     font-size: 16px;
     line-height: 22px;
     cursor: pointer;
+    pointer-events: all;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: #f1eae4;
+      transition: all 1s ease;
+      z-index: -1;
+    }
+    &:hover::before,
+    &:focus::before {
+      width: 100%;
+    }
+
     @media screen and (max-width: $size-of-mobile) {
       font-size: 14px;
       line-height: 20px;
@@ -102,6 +124,15 @@ $size-of-mobile: 450px;
   &__link {
     color: var(--color-of-text);
     text-decoration: none;
+    outline: none;
+    &:hover .intro__link-description,
+    &:focus .intro__link-description {
+      transform: translateY(10px);
+    }
+    &:hover .intro__picture,
+    &:focus .intro__picture {
+      opacity: 0.7;
+    }
   }
 
   &__link-description {
@@ -110,6 +141,7 @@ $size-of-mobile: 450px;
     margin-top: 8.5px;
     font-size: 16px;
     letter-spacing: 0.15px;
+    transition: transform 1s;
 
     @media screen and (max-width: $size-of-mobile) {
       font-size: 12px;
@@ -130,6 +162,7 @@ $size-of-mobile: 450px;
     max-width: 330px;
     min-width: 130px;
     width: 100%;
+    transition: opacity 1s;
     @media screen and (max-width: $size-of-tablet) {
       max-width: 245px;
     }
