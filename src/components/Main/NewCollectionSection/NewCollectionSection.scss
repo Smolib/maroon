@@ -1,0 +1,105 @@
+$size-of-tablet: 800px;
+$size-of-mobile: 450px;
+.new-collection {
+  margin: auto;
+  width: 100%;
+  max-width: 1366px;
+  min-height: 400px;
+  background-image: url(../../../images/new-collection-background.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+
+  @media screen and (max-width: $size-of-tablet) {
+    background-size: 1470px;
+    background-position: 60% 0px;
+    min-height: 432px;
+  }
+  @media screen and (max-width: $size-of-mobile) {
+    min-height: 562px;
+    background-size: cover;
+    background-position: top left;
+    background-image: url(../../../images/new-collection-background-small.png), linear-gradient(90deg, rgba(214,208,199,1) 0%, rgba(242,239,235,1) 100%);
+
+  }
+
+  &__wrapper {
+    position: absolute;
+    top: 48%;
+    left: 58.5%;
+    transform: translateY(-50%);
+    width: 284px;
+    display: flex;
+    flex-direction: column;
+    @media screen and (max-width: $size-of-tablet) {
+      top: 48.5%;
+      right: 85px;
+      left: auto;
+    }
+    @media screen and (max-width: $size-of-mobile) {
+      top: 70%;
+      right: 33px;
+      width: 253px;
+      justify-content: center;
+    }
+  }
+
+  &__title {
+    font-size: 32px;
+    margin: 0;
+    font-weight: 500;
+    font-family: var(--font-of-title);
+    line-height: 40px;
+    @media screen and (max-width: $size-of-mobile) {
+      font-size: 28px;
+      line-height: 35px;
+      text-align: center;
+    }
+  }
+
+  &__text {
+    margin: 15px 0 0;
+    font-size: 18px;
+    line-height: 26px;
+    @media screen and (max-width: $size-of-mobile) {
+      font-size: 16px;
+      line-height: 22px;
+      text-align: center;
+    }
+  }
+
+  &__button {
+    margin: 33px auto 0 0;
+    padding: 8px 27px 9px;
+    border: 1px solid var(--color-of-border-button);
+    border-radius: 2px;
+    background-color: inherit;
+    font-size: 16px;
+    line-height: 22px;
+    cursor: pointer;
+    pointer-events: all;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: #f1e7e8;
+      transition: all 1s ease;
+      z-index: -1;
+    }
+    &:hover::before,
+    &:focus::before {
+      width: 100%;
+    }
+
+    @media screen and (max-width: $size-of-mobile) {
+      font-size: 14px;
+      line-height: 20px;
+      margin: 23px auto 0;
+    }
+  }
+}

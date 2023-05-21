@@ -1,10 +1,10 @@
-import "./BestSellersSection.css";
+import "./BestSellersSection.scss";
 
 function BestSellersSection() {
   return (
-    <div>
-      BestSellersSection
-    </div>
+    <section className="bestsellers">
+
+    </section>
   );
 }
 

@@ -9,6 +9,9 @@ $size-of-mobile: 450px;
   background-image: url("../../../images/intro-background.png");
   background-repeat: no-repeat;
 
+  @media screen and (max-width: $size-of-tablet) {
+    padding-bottom: 68px;
+  }
   @media screen and (max-width: $size-of-mobile) {
     padding: 268px 0 58px;
   }

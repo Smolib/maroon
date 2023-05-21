@@ -1,0 +1,14 @@
+$size-of-tablet: 800px;
+$size-of-mobile: 450px;
+.bestsellers {
+  height: 629px;
+  background-color: yellow;
+
+  @media screen and (max-width: $size-of-tablet) {
+    height: 590px;
+  }
+  @media screen and (max-width: $size-of-mobile) {
+    height: 689px;
+  }
+
+}
