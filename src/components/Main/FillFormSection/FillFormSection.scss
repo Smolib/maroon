@@ -2,14 +2,14 @@ $size-of-tablet: 800px;
 $size-of-mobile: 450px;
 .fill-form {
   width: 100%;
-  padding: 137px 0 137px 98px;
+  padding: 137px 0 124px 98px;
   box-sizing: border-box;
 
   @media screen and (max-width: $size-of-tablet) {
     padding: 119px 0 119px 45px;
   }
   @media screen and (max-width: $size-of-mobile) {
-    padding: 80px 15px;
+    padding: 80px 15px 0;
   }
 
   &__wrapper {
@@ -22,6 +22,7 @@ $size-of-mobile: 450px;
     @media screen and (max-width: $size-of-mobile) {
       flex-direction: column;
       overflow-x: auto;
+      margin-bottom: -143px;
     }
   }
 
@@ -46,15 +47,14 @@ $size-of-mobile: 450px;
     font-size: 32px;
     line-height: 42px;
     margin: 0 0 25px;
-    font-weight: 400;
-    letter-spacing: -0.9px;
+    font-weight: 500;
+    letter-spacing: 0;
     font-family: var(--font-of-title);
     @media screen and (max-width: $size-of-mobile) {
       margin-bottom: 14px;
       font-size: 28px;
       line-height: 35px;
       text-align: center;
-      letter-spacing: 0;
     }
   }
   &__text {

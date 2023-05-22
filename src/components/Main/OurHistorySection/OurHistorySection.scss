@@ -1,0 +1,84 @@
+$size-of-tablet: 800px;
+$size-of-mobile: 450px;
+.our-history {
+  width: 100%;
+  max-width: 1366px;
+  margin: auto;
+  background-image: url("../../../images/our-history-background.png");
+  min-height: 433px;
+  background-size: cover;
+  @media screen and (max-width: $size-of-tablet) {
+    min-height: 394px;
+    background-position: -237px;
+  }
+  @media screen and (max-width: $size-of-mobile) {
+    min-height: 346px;
+    background-position: -356px;
+  }
+
+  &__wrapper {
+    margin: 0 auto;
+    max-width: 901px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__text {
+    text-align: center;
+    font-family: var(--font-of-title);
+    font-size: 32px;
+    line-height: 40px;
+    margin: 128px 58px 0;
+    font-weight: 500;
+    @media screen and (max-width: $size-of-tablet) {
+      margin-top: 91px;
+    }
+    @media screen and (max-width: $size-of-mobile) {
+      font-size: 22px;
+      line-height: 28px;
+      margin: 55px 39px 0
+    }
+  }
+
+  &__button {
+    margin: 39px auto 20px;
+    padding: 8px 27px 9px;
+    border: 1px solid var(--color-of-border-button);
+    border-radius: 2px;
+    background-color: inherit;
+    font-size: 16px;
+    line-height: 22px;
+    cursor: pointer;
+    pointer-events: all;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: #f4c37e;
+      transition: all 1s ease;
+      z-index: 1;
+    }
+    &:hover::before,
+    &:focus::before {
+      width: 100%;
+    }
+    @media screen and (max-width: $size-of-tablet) {
+      margin-top: 42px;
+    }
+
+    @media screen and (max-width: $size-of-mobile) {
+      font-size: 14px;
+      line-height: 20px;
+      margin: 23px auto 0;
+    }
+  }
+  &__button-name {
+    position: relative;
+    z-index: 2;
+  }
+}
