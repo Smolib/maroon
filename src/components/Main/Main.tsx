@@ -4,7 +4,7 @@ import BestSellersSection from "./BestSellersSection/BestSellersSection";
 import NewCollectionSection from "./NewCollectionSection/NewCollectionSection";
 import FillFormSection from "./FillFormSection/FillFormSection";
 import OurHistorySection from "./OurHistorySection/OurHistorySection";
-import SubscribeSection from "../SubscribeSection/BestSellersSection";
+import SubscribeSection from "../SubscribeSection/SubscribeSection";
 import MapSection from "../MapSection/MapSection";
 
 function Main() {
