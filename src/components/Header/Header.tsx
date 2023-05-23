@@ -3,23 +3,39 @@ import { useEffect, useState } from "react";
 import logoSvg from "../../images/logo.svg";
 import profileSvg from "../../images/profile.svg";
 import cartSvg from "../../images/cart.svg";
-import facebook from "../../images/facebook.svg";
-import instagram from "../../images/instagram.svg";
-import twitter from "../../images/twitter.svg";
 import burger from "../../images/burger.svg";
 import close from "../../images/close.svg";
+import SocialsList from "../utils-components/SocialsList/SocialsList";
 
 function Header() {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
   const [isMenuColored, setIsMenuColored] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(0);
   const [scroll, setScroll] = useState(0);
 
   useEffect(() => {
+    setScroll(window.scrollY);
+    setWindowWidth(window.innerWidth);
     const handleScroll = () => {
       setScroll(window.scrollY);
     };
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    setWindowWidth(window.innerWidth);
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   useEffect(() => {
@@ -65,23 +81,7 @@ function Header() {
             </li>
           </ul>
         </nav>
-        <ul className="header__contacts-list">
-          <li className="header__contact-item">
-            <a className="header__contact-link" href="#">
-              <img className="header__contact-picture" src={facebook} />
-            </a>
-          </li>
-          <li className="header__contact-item">
-            <a className="header__contact-link" href="#">
-              <img className="header__contact-picture" src={instagram} />
-            </a>
-          </li>
-          <li className="header__contact-item">
-            <a className="header__contact-link" href="#">
-              <img className="header__contact-picture" src={twitter} />
-            </a>
-          </li>
-        </ul>
+        {windowWidth <= 800 && <SocialsList />}
       </div>
       <div className="header__button-area">
         <button className="header__button">

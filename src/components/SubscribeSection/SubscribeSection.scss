@@ -4,18 +4,18 @@ $size-of-mobile: 450px;
   width: 100%;
   max-width: 1366px;
   margin: auto;
-  padding: 156px 45px 140px 97px;
+  padding: 140px 45px 3px 98px;
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 59% calc(41% - 30px);
 
   @media screen and (max-width: $size-of-tablet) {
-    padding: 120px 45px 140px 44px;
+    padding: 120px 45px 0 44px;
     grid-template-columns: 59.3% 41.7%;
   }
 
   @media screen and (max-width: $size-of-mobile) {
-    padding: 72px 15px 140px;
+    padding: 72px 15px 0;
     grid-template-columns: 100%;
   }
 
