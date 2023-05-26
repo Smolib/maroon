@@ -107,8 +107,9 @@ $size-of-mobile: 550px;
       scale: 1.35;
     }
     @media screen and (max-width: $size-of-mobile) {
-      object-position: -36px;
-      scale: 0.97;
+      object-position: -6px 23px;
+      scale: 1.18;
+      height: 250px;
     }
   }
 }

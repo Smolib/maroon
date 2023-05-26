@@ -83,7 +83,7 @@ function Header() {
         </nav>
         {windowWidth <= 800 && <SocialsList />}
       </div>
-      <div className="header__button-area">
+      <div className="header__buttons-area">
         <button className="header__button">
           <img className="header__button-icon" alt="Профиль" src={profileSvg} />
         </button>

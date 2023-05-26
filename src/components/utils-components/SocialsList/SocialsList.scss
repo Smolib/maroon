@@ -3,12 +3,9 @@ $size-of-mobile: 450px;
 .contacts-list {
   margin: 0;
   padding: 0;
-  gap: 25px;
+  gap: 30px;
   display: flex;
 
-  @media screen and (max-width: $size-of-mobile) {
-    gap: 30px;
-  }
   &__item {
     list-style: none;
     padding: 0;

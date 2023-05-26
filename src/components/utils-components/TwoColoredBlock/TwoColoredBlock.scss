@@ -4,11 +4,12 @@ $size-of-mobile: 550px;
   width: 100%;
   padding: 137px 0 140px 98px;
   box-sizing: border-box;
+  overflow: hidden;
   @media screen and (max-width: $size-of-tablet) {
     padding: 119px 0 119px 45px;
   }
   @media screen and (max-width: $size-of-mobile) {
-    padding: 80px 15px 0;
+    padding: 80px 15px 106px;
   }
   &__wrapper {
     max-width: 1366px;
@@ -25,7 +26,7 @@ $size-of-mobile: 550px;
   }
   &__colored-area {
     min-width: 670px;
-    background-color: #f4f1ed;
+    background-color:  var(--color-of-blocks-background);
     padding: 90px 214px 50px 100px;
     box-sizing: border-box;
     display: flex;

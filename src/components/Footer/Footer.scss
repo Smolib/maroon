@@ -1,0 +1,180 @@
+$size-of-tablet: 900px;
+$size-of-mobile: 700px;
+$size-of-max-width: 1366px;
+
+.footer {
+  border-bottom: 1px solid transparent;
+  background-color: var(--color-of-blocks-background);
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1366px;
+  display: flex;
+  flex-direction: column;
+
+  &__main-area {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid var(--color-of-border-nav);
+    padding: 61px 98px 56px;
+    box-sizing: border-box;
+    gap: 30px;
+
+    @media screen and (max-width: $size-of-tablet) {
+      padding: 61px 45px 56px;
+    }
+    @media screen and (max-width: $size-of-mobile) {
+      padding: 50px 16px 46px calc(max((100vw - 400px), 0px) + 16px);
+      flex-direction: column;
+      gap: 26px;
+    }
+  }
+
+  &__logo-link {
+    display: flex;
+    justify-content: center;
+    outline: none;
+
+    &:hover .footer__logo,
+    &:focus .footer__logo {
+      transform: scale(1.1);
+    }
+    @media screen and (max-width: $size-of-mobile) {
+      justify-content: start;
+    }
+  }
+  &__logo {
+    transition: transform 0.2s ease;
+    width: 131px;
+    height: 21px;
+    @media screen and (max-width: $size-of-mobile) {
+      width: 85px;
+      height: 15px;
+    }
+  }
+  &__nav {
+    margin-right: auto;
+    margin-left: 39px;
+    @media screen and (max-width: $size-of-tablet) {
+      margin-left: 21px;
+    }
+    @media screen and (max-width: $size-of-mobile) {
+      margin-left: 0;
+    }
+  }
+  &__nav-list {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    gap: 41px;
+
+    @media screen and (max-width: $size-of-tablet) {
+      gap: 25px;
+    }
+    @media screen and (max-width: $size-of-mobile) {
+      max-width: 180px;
+      display: grid;
+      grid-template-columns: auto auto;
+      gap: 21px 29px;
+    }
+  }
+  &__nav-item {
+    list-style: none;
+    padding: 0;
+    font-family: var(--font-of-text);
+    font-size: calc(0.65vw + 7px);
+    letter-spacing: 0;
+    @media screen and (min-width: $size-of-max-width) {
+      font-size: 16px;
+    }
+
+    @media screen and (max-width: $size-of-tablet) {
+      font-size: 16px;
+    }
+    @media screen and (max-width: $size-of-mobile) {
+      font-size: 14px;
+    }
+  }
+  &__nav-link {
+    color: var(--color-of-text);
+    text-decoration: none;
+    outline: none;
+    position: relative;
+    &::before,
+    &::after {
+      top: 0;
+      position: absolute;
+      font-size: 16px;
+      font-family: var(--font-of-text);
+      color: var(--color-of-text);
+      display: inline-block;
+      opacity: 0;
+      transition: transform 0.3s, opacity 0.2s;
+      @media screen and (max-width: $size-of-tablet) {
+        font-size: 16px;
+        top: 4px;
+      }
+      @media screen and (max-width: $size-of-mobile) {
+        font-size: 16px;
+        top: 2px;
+      }
+    }
+    &::before {
+      left: -20px;
+      margin-right: 11px;
+      content: "[";
+      transform: translateX(20px);
+
+      @media screen and (max-width: $size-of-mobile) {
+        left: -10px;
+      }
+    }
+    &::after {
+      right: -20px;
+      margin-left: 11px;
+      content: "]";
+      transform: translateX(-20px);
+
+      @media screen and (max-width: $size-of-mobile) {
+        right: -10px;
+      }
+    }
+    &:hover,
+    &:focus {
+      &::before,
+      &::after {
+        opacity: 1;
+        transform: translateX(0px);
+      }
+    }
+  }
+  &__copyright-area {
+    padding: 20px 98px 18px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+    @media screen and (max-width: $size-of-tablet) {
+      padding: 16px 45px 21px;
+    }
+    @media screen and (max-width: $size-of-mobile) {
+      flex-direction: column;
+      padding: 23px 16px;
+      gap: 14px;
+      padding: 23px 16px 23px calc(max((100vw - 400px), 0px) + 16px);
+    }
+  }
+  &__copyright-link {
+    color: #959595;
+    text-decoration: none;
+  }
+  &__copyright-text {
+    color: #959595;
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0;
+  }
+}
