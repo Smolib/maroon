@@ -1,0 +1,14 @@
+$size-of-tablet: 800px;
+$size-of-mobile: 450px;
+.swiper {
+  position: relative;
+  padding: 138px 0 122px;
+  height: 312px;
+  &-navigate-block {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    justify-content: end;
+    padding: 19px 93px 0 0;
+  }
+}
