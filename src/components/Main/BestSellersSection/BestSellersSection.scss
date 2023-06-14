@@ -13,11 +13,24 @@ $size-of-mobile: 450px;
     margin-bottom: 36px;
     gap: 39px;
   }
+  @media screen and (max-width: $size-of-mobile) {
+    flex-direction: column;
+    gap: 0;
+    margin: 73px 0 80px;
+    padding: 0;
+    align-items: center;
+  }
   &__description-area {
     min-width: 215px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    @media screen and (max-width: $size-of-mobile) {
+      width: 100%;
+      align-items: center;
+      max-width: 190px;
+      padding: 0 0 44px;
+    }
   }
   &__title {
     font-size: 32px;
@@ -38,15 +51,13 @@ $size-of-mobile: 450px;
     line-height: 26px;
     margin: 0 0 15px;
     @media screen and (max-width: $size-of-mobile) {
-      &:first-of-type {
-        display: none;
-      }
       font-size: 16px;
       line-height: 22px;
       text-align: center;
       margin-bottom: 0;
     }
-  }&__button {
+  }
+  &__button {
     margin: 18px auto 0 0;
     padding: 8px 24px 9px;
     border: 1px solid var(--color-of-border-button);
@@ -73,11 +84,15 @@ $size-of-mobile: 450px;
     &:focus::before {
       width: 100%;
     }
+    @media screen and (max-width: $size-of-tablet) {
+      margin-bottom: 15px;
+    }
 
     @media screen and (max-width: $size-of-mobile) {
       font-size: 14px;
       line-height: 20px;
       margin: 25px auto 0;
+      padding: 8px 28px 10px;
     }
   }
   &__button-name {

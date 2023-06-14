@@ -1,3 +1,5 @@
+$size-of-tablet: 800px;
+$size-of-mobile: 450px;
 .bestseller-card {
   width: 230px;
   height: 312px;
@@ -7,6 +9,10 @@
   align-items: center;
   background-position: center;
   background-size: 230px auto;
+  @media screen and (max-width: $size-of-mobile) {
+    width: 220px;
+    height: 297px;
+  }
   &__title {
     font-family: var(--font-of-title);
     font-weight: 500;
@@ -18,6 +24,9 @@
     font-size: 13px;
     color: #9a9da0;
     margin: 0 0 14px;
+    @media screen and (max-width: $size-of-mobile) {
+      margin-bottom: 9px;
+    }
   }
   &__link {
     font-weight: 400;
@@ -27,5 +36,8 @@
     border-bottom: 1px solid #122947;
     text-decoration: none;
     padding-bottom: 3px;
+    @media screen and (max-width: $size-of-mobile) {
+      margin-bottom: 20px;
+    }
   }
 }
