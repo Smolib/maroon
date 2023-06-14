@@ -8,13 +8,24 @@ import BestSellerCard from "./BestSellerCard/BestSellerCard";
 import items from "../../../../mocks/items";
 import "./SwiperBestsellers.scss";
 import NavigateButton from "../../../utils-components/SlidePrevButton/NavigateButton";
+import useCurrentWidth from "../../../../hooks/useCurrentWidth";
 
 function SwiperBestsellers() {
+  const width = useCurrentWidth();
+  const slidesPerView = width / 355;
+  let slidesPerGroup = 0;
+  if (width >= 1110) {
+    slidesPerGroup = 3;
+  } else if (width >= 700) {
+    slidesPerGroup = 2;
+  } else {
+    slidesPerGroup = 1;
+  }
   return (
     <Swiper
       modules={[Scrollbar]}
-      slidesPerView={3.85}
-      slidesPerGroup={3}
+      slidesPerView={slidesPerView}
+      slidesPerGroup={slidesPerGroup}
       spaceBetween={30}
       loop
     >

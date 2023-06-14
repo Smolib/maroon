@@ -11,4 +11,7 @@ $size-of-mobile: 450px;
     justify-content: end;
     padding: 19px 93px 0 0;
   }
+  @media screen and (max-width: $size-of-tablet) {
+    padding-top: 120px;
+  }
 }

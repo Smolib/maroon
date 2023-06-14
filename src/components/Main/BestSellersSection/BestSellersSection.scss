@@ -8,6 +8,11 @@ $size-of-mobile: 450px;
   max-width: 1366px;
   box-sizing: border-box;
   gap: 86px;
+  @media screen and (max-width: $size-of-tablet) {
+    padding-left: 45px;
+    margin-bottom: 36px;
+    gap: 39px;
+  }
   &__description-area {
     min-width: 215px;
     display: flex;
