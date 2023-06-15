@@ -33,7 +33,7 @@ function SwiperBestsellers({ width }: SwiperBestsellersProps) {
           <BestSellerCard
             name={item.name}
             image={item.image}
-            type={item.type}
+            shortDescription={item.shortDescription}
           />
         </SwiperSlide>
       ))}

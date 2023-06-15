@@ -4,10 +4,10 @@ import "./BestSellerCard.scss";
 type BestSellerCardProps = {
   name: Item["name"];
   image: Item["image"];
-  type: Item["type"];
+  shortDescription: Item["shortDescription"];
 };
 
-function BestSellerCard({ name, image, type }: BestSellerCardProps) {
+function BestSellerCard({ name, image, shortDescription }: BestSellerCardProps) {
   const style = {
     backgroundImage: `url(${image})`,
   };
@@ -16,7 +16,7 @@ function BestSellerCard({ name, image, type }: BestSellerCardProps) {
     <div className="bestseller-card" style={style}>
       <h3 className="bestseller-card__title">{name}</h3>
       <span className="bestseller-card__description">
-        {type.name} для {type.for}
+        {shortDescription}
       </span>
       <a className="bestseller-card__link" href="#">Подробнее</a>
     </div>

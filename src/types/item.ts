@@ -11,6 +11,7 @@ export type Item = {
   volume: number[];
   price: number[];
   units: "ml" | "g",
+  shortDescription: string,
   description: string[];
   instruction: string[];
   composition: string;
