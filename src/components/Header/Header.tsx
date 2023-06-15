@@ -1,17 +1,21 @@
 import "./Header.scss";
 import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import logoSvg from "../../images/logo.svg";
 import profileSvg from "../../images/profile.svg";
 import cartSvg from "../../images/cart.svg";
 import burger from "../../images/burger.svg";
 import close from "../../images/close.svg";
 import SocialsList from "../utils-components/SocialsList/SocialsList";
+import { AppRoute } from "../../utils/consts";
 
 function Header() {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
   const [isMenuColored, setIsMenuColored] = useState(false);
   const [windowWidth, setWindowWidth] = useState(0);
   const [scroll, setScroll] = useState(0);
+
+  const { pathname } = useLocation();
 
   useEffect(() => {
     setScroll(window.scrollY);
@@ -51,9 +55,9 @@ function Header() {
         isMenuColored || scroll > 0 ? "header_colored" : ""
       }`}
     >
-      <a className="header__logo-link" href="#">
+      <Link className="header__logo-link" to={"/"}>
         <img className="header__logo" alt="Логотип Maroon" src={logoSvg} />
-      </a>
+      </Link>
       <button className="header__burger-button" onClick={handleBurgerClick}>
         <img alt="Кнопка меню" src={isMenuOpened ? close : burger} />
       </button>
@@ -65,19 +69,31 @@ function Header() {
         <nav>
           <ul className="header__nav-list">
             <li className="header__nav-item">
-              <a className="header__nav-link" href="#">
+              <Link className="header__nav-link" to={"/catalog"}>
                 Каталог
-              </a>
+              </Link>
             </li>
             <li className="header__nav-item">
-              <a className="header__nav-link" href="#">
-                О нас
-              </a>
+              {pathname === AppRoute.Main ? (
+                <a href="#about" className="header__nav-link">
+                  О нас
+                </a>
+              ) : (
+                <Link className="header__nav-link" to={"/#about"}>
+                  О нас
+                </Link>
+              )}
             </li>
             <li className="header__nav-item">
-              <a className="header__nav-link" href="#">
-                Контакты
-              </a>
+              {pathname === AppRoute.Main || pathname === AppRoute.Catalog ? (
+                <Link className="header__nav-link" to={"#contacts"}>
+                  Контакты
+                </Link>
+              ) : (
+                <Link className="header__nav-link" to={"/#contacts"}>
+                  Контакты
+                </Link>
+              )}
             </li>
           </ul>
         </nav>

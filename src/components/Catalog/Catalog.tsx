@@ -4,10 +4,10 @@ import MapSection from "../MapSection/MapSection";
 
 function Catalog() {
   return (
-    <main className="main">
+    <>
       <SubscribeSection />
       <MapSection />
-    </main>
+    </>
   );
 }
 

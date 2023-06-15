@@ -5,7 +5,7 @@ import "./MapSection.scss";
 function MapSection() {
   return (
     <TwoColoredBlock>
-      <div className="contacts">
+      <div className="contacts" id="contacts">
         <h2 className="contacts__title">Контакты</h2>
         <dl className="contacts__list">
           <dt className="contacts__dt">Адрес</dt>

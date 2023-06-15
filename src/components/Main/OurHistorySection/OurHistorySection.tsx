@@ -2,7 +2,7 @@ import "./OurHistorySection.scss";
 
 function OurHistorySection() {
   return (
-    <section className="our-history">
+    <section className="our-history" id="about">
       <div className="our-history__wrapper">
         <p className="our-history__text">
           “Мы&nbsp;стремимся сделать уход за&nbsp;кожей доступным

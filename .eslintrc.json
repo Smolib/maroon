@@ -36,6 +36,10 @@
     "semi": ["error", "always"],
     "react/react-in-jsx-scope": "off",
     "import/no-unresolved": [2, { "caseSensitive": false }],
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": "warn",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["error"],
     "import/extensions": [
       "error",
       "ignorePackages",
