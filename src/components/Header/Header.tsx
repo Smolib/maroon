@@ -75,9 +75,9 @@ function Header() {
             </li>
             <li className="header__nav-item">
               {pathname === AppRoute.Main ? (
-                <a href="#about" className="header__nav-link">
+                <Link className="header__nav-link" to={"#about"}>
                   О нас
-                </a>
+                </Link>
               ) : (
                 <Link className="header__nav-link" to={"/#about"}>
                   О нас

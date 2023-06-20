@@ -1,12 +1,8 @@
-type TypeOfItem = {
-  for: "face" | "body";
-  name: "Крем" | "Сыворотка" | "Маска" | "Пенка" | "Тоник" | "Пудра" | "Масло" | "Скраб" | "Мыло" | "Бомбочка" | "Соль";
-}
-
-export type Item = {
+export type TypeOfItem = {
   id: number;
   name: string;
-  type: TypeOfItem;
+  useFor: "face" | "body";
+  category: "Крема" | "Сыворотки" | "Маски" | "Пенки" | "Тоники" | "Пудры" | "Масла" | "Скрабы" | "Мыло" | "Бомбочки для ванны" | "Соль для ванны";
   skin: "Нормальная" | "Сухая" | "Жирная" | "Комбинированная";
   volume: number[];
   price: number[];

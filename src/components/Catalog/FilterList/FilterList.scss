@@ -1,0 +1,53 @@
+$size-of-tablet: 800px;
+$size-of-mobile: 450px;
+.filter-list {
+  grid-row: 1 / span 2;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  &:nth-last-of-type(1) {
+    grid-row: 1 / 1;
+  }
+  &__button {
+    display: none;
+  }
+  &__title {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0;
+    margin: 0;
+  }
+  &__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 24px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15.7px;
+  }
+  &__item {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  &__label {
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-color: inherit;
+      border-radius: 90%;
+      outline: 1px solid #CDCDCD;
+      outline-offset: 2px;
+      margin-right: 12px;
+      cursor: pointer;
+    }
+  }
+  &__input {
+    display: none;
+
+    &:checked ~ .filter-list__label::before {
+      background-color: var(--color-of-text);
+    }
+  }
+}

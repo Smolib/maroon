@@ -1,0 +1,37 @@
+.filter-section {
+  max-width: 1366px;
+  margin: auto;
+  padding: 142px 93px 48px 98px;
+  display: flex;
+  &__title {
+    margin: 0;
+    font-family: var(--font-of-title);
+    font-size: 36px;
+    font-weight: 500;
+  }
+  &__button {
+    margin-left: auto;
+    background-color: inherit;
+    cursor: pointer;
+    &_open {
+      border: 1px solid var(--color-of-border-button);
+      padding: 3px 41px 8px;
+      font-size: 16px;
+      font-weight: 500;
+      margin-right: 5px;
+
+    }
+    &_close{
+      border: none;
+
+    }
+  }
+  &__filter-area {
+    position: absolute;
+    width: 100%;
+    padding-bottom: 120px;
+    top: 221px;
+    left: 0;
+    background-color: var(--color-of-main-background);
+  }
+}

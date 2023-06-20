@@ -1,10 +1,10 @@
-import { Item } from "../../../../../types/item";
+import { TypeOfItem } from "../../../../../types/item";
 import "./BestSellerCard.scss";
 
 type BestSellerCardProps = {
-  name: Item["name"];
-  image: Item["image"];
-  shortDescription: Item["shortDescription"];
+  name: TypeOfItem["name"];
+  image: TypeOfItem["image"];
+  shortDescription: TypeOfItem["shortDescription"];
 };
 
 function BestSellerCard({ name, image, shortDescription }: BestSellerCardProps) {

@@ -1,4 +1,4 @@
-import { Item } from "../types/item";
+import { TypeOfItem } from "../types/item";
 import image01 from "../images/items/01.png";
 import image02 from "../images/items/02.png";
 import image03 from "../images/items/03.png";
@@ -12,11 +12,12 @@ import image10 from "../images/items/10.png";
 import image11 from "../images/items/11.png";
 import image12 from "../images/items/12.png";
 
-const items: Item[] = [
+const items: TypeOfItem[] = [
   {
     id: 1,
     name: "High",
-    type: { for: "face", name: "Крем" },
+    useFor: "face",
+    category: "Крема",
     skin: "Сухая",
     volume: [50, 30],
     price: [990, 500],
@@ -30,7 +31,8 @@ const items: Item[] = [
   {
     id: 2,
     name: "Rest",
-    type: { for: "face", name: "Пудра" },
+    useFor: "face",
+    category: "Пудры",
     skin: "Комбинированная",
     volume: [20, 10],
     price: [690, 400],
@@ -44,7 +46,8 @@ const items: Item[] = [
   {
     id: 3,
     name: "Rose",
-    type: { for: "face", name: "Крем" },
+    useFor: "face",
+    category: "Крема",
     skin: "Сухая",
     volume: [50, 30],
     price: [890, 500],
@@ -58,7 +61,8 @@ const items: Item[] = [
   {
     id: 4,
     name: "Milk",
-    type: { for: "body", name: "Масло" },
+    useFor: "body",
+    category: "Масла",
     skin: "Нормальная",
     volume: [150, 100],
     price: [790, 500],
@@ -72,7 +76,8 @@ const items: Item[] = [
   {
     id: 5,
     name: "Paradise",
-    type: { for: "face", name: "Пудра" },
+    useFor: "face",
+    category: "Пудры",
     skin: "Жирная",
     volume: [15, 10],
     price: [590, 400],
@@ -86,7 +91,8 @@ const items: Item[] = [
   {
     id: 6,
     name: "Sun",
-    type: { for: "body", name: "Бомбочка" },
+    useFor: "body",
+    category: "Бомбочки для ванны",
     skin: "Комбинированная",
     volume: [20, 10],
     price: [90, 50],
@@ -100,7 +106,8 @@ const items: Item[] = [
   {
     id: 7,
     name: "Violet",
-    type: { for: "face", name: "Крем" },
+    useFor: "face",
+    category: "Крема",
     skin: "Нормальная",
     volume: [50, 30],
     price: [890, 650],
@@ -114,7 +121,8 @@ const items: Item[] = [
   {
     id: 8,
     name: "Clean",
-    type: { for: "face", name: "Маска" },
+    useFor: "face",
+    category: "Маски",
     skin: "Сухая",
     volume: [100, 70],
     price: [490, 350],
@@ -128,7 +136,8 @@ const items: Item[] = [
   {
     id: 9,
     name: "Coconut",
-    type: { for: "body", name: "Масло" },
+    useFor: "body",
+    category: "Масла",
     skin: "Комбинированная",
     volume: [300, 200],
     price: [990, 750],
@@ -142,7 +151,8 @@ const items: Item[] = [
   {
     id: 10,
     name: "Lavender",
-    type: { for: "body", name: "Масло" },
+    useFor: "body",
+    category: "Масла",
     skin: "Комбинированная",
     volume: [50, 30],
     price: [290, 180],
@@ -156,7 +166,8 @@ const items: Item[] = [
   {
     id: 11,
     name: "Lotos",
-    type: { for: "face", name: "Маска" },
+    useFor: "face",
+    category: "Маски",
     skin: "Нормальная",
     volume: [50, 30],
     price: [890, 680],
@@ -170,7 +181,8 @@ const items: Item[] = [
   {
     id: 12,
     name: "Earth",
-    type: { for: "body", name: "Бомбочка" },
+    useFor: "body",
+    category: "Бомбочки для ванны",
     skin: "Нормальная",
     volume: [20, 10],
     price: [90, 50],

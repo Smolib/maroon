@@ -1,0 +1,49 @@
+$size-of-tablet: 800px;
+$size-of-mobile: 450px;
+.filter {
+  display: grid;
+  grid-template-columns: 133px 187px 302px;
+  gap: 38px 80px;
+  grid-template-rows: repeat(2, auto);
+  margin: auto;
+  width: 768px;
+  &__button-area {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  &__button {
+    width: 141px;
+    padding: 7px 0 10px;
+    border: 1px solid var(--color-of-border-button);
+    border-radius: 2px;
+    background-color: inherit;
+    font-size: 16px;
+    line-height: 22px;
+    cursor: pointer;
+    pointer-events: all;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: #f1e7e8;
+      transition: all 1s ease;
+      z-index: -1;
+    }
+    &:hover::before,
+    &:focus::before {
+      width: 100%;
+    }
+
+    @media screen and (max-width: $size-of-mobile) {
+      font-size: 14px;
+      line-height: 20px;
+      margin: 23px auto 0;
+    }
+  }
+}
