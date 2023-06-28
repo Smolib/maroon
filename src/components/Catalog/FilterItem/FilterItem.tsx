@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import SearchDataContext from "../../../context/SearchDataContext";
 import { TypeOfFilter } from "../../../types/filter";
 import { TypeOfItem } from "../../../types/item";
@@ -15,8 +15,8 @@ function FilterItem({
   title,
 }: FilterItemProps) {
   const { searchData, setSearchData } = useContext(SearchDataContext);
+  const [isChoose, setIsChoose] = useState((searchData[useFor] as TypeOfFilter["keys"]).includes(name));
   const handleClick = () => {
-    const isChoose = (searchData[useFor] as TypeOfFilter["keys"]).includes(name);
     if (isChoose) {
       const newData = (searchData[useFor]as TypeOfFilter["keys"]).filter((i) => i !== name);
       setSearchData({
@@ -28,12 +28,17 @@ function FilterItem({
       });
     }
   };
+  const handleChangeInput = () => {
+    setIsChoose(!isChoose);
+  };
   return (
     <li className="filter-list__item">
       <input
         className="filter-list__input"
         type="checkbox"
         id={`${title}-${name}`}
+        checked={isChoose}
+        onChange={handleChangeInput}
       />
       <label
         onClick={handleClick}

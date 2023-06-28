@@ -5,13 +5,10 @@ import MapSection from "../MapSection/MapSection";
 import FilterSection from "./FilterSection/FilterSection";
 import { TypeOfSettingsFilter } from "../../types/filter";
 import SearchDataContext from "../../context/SearchDataContext";
+import { FilterContextDefaultData } from "../../utils/consts";
 
 function Catalog() {
-  const [searchData, setSearchData] = useState<TypeOfSettingsFilter>({
-    body: [],
-    face: [],
-    skin: [],
-  });
+  const [searchData, setSearchData] = useState<TypeOfSettingsFilter>(FilterContextDefaultData);
 
   return (
     <SearchDataContext.Provider value={{ searchData, setSearchData }}>

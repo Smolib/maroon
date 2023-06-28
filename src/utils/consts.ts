@@ -1,4 +1,4 @@
-import { TypeOfFilter } from "../types/filter";
+import { TypeOfFilter, TypeOfSettingsFilter } from "../types/filter";
 
 export enum AppRoute {
   Main = "/",
@@ -31,3 +31,9 @@ export const FilterSettings: TypeOfFilter[] = [
     keys: ["Нормальная", "Сухая", "Жирная", "Комбинированная"],
   },
 ];
+
+export const FilterContextDefaultData: TypeOfSettingsFilter = {
+  body: [],
+  face: [],
+  skin: [],
+};

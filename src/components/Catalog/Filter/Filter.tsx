@@ -1,5 +1,5 @@
 import { FormEvent, useContext } from "react";
-import { FilterSettings } from "../../../utils/consts";
+import { FilterContextDefaultData, FilterSettings } from "../../../utils/consts";
 import FilterList from "../FilterList/FilterList";
 import "./Filter.scss";
 import SearchDataContext from "../../../context/SearchDataContext";
@@ -25,7 +25,7 @@ function Filter() {
         <button
           type="reset"
           className="filter__button"
-          onClick={() => setSearchData({ body: [], face: [], skin: [] })}
+          onClick={() => setSearchData(FilterContextDefaultData)}
         >
           Сбросить
         </button>
