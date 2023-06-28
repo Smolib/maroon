@@ -1,15 +1,46 @@
-$size-of-tablet: 800px;
-$size-of-mobile: 450px;
+$size-of-tablet: 900px;
+$size-of-mobile: 700px;
 .filter-list {
   grid-row: 1 / span 2;
   border: 0;
   margin: 0;
   padding: 0;
+  @media screen and (max-width: $size-of-mobile) {
+    grid-row: auto;
+  }
   &:nth-last-of-type(1) {
     grid-row: 1 / 1;
+
+    @media screen and (max-width: $size-of-tablet) {
+      grid-row: 1 / span 2;
+    }
+    @media screen and (max-width: $size-of-mobile) {
+      grid-row: auto;
+    }
+  }
+  &__title-area {
+    @media screen and (max-width: $size-of-mobile) {
+      display: flex;
+    }
   }
   &__button {
     display: none;
+    @media screen and (max-width: $size-of-mobile) {
+      display: inline-block;
+    }
+  }
+  &__title-area {
+    @media screen and (max-width: $size-of-mobile) {
+      border-bottom: 1px solid var(--color-of-border-nav);
+      padding-bottom: 15px;
+      cursor: pointer;
+      &:hover {
+        .filter-list__button::after,
+        .filter-list__button::before {
+          transform: scale(1.5);
+        }
+      }
+    }
   }
   &__title {
     font-size: 18px;
@@ -24,20 +55,34 @@ $size-of-mobile: 450px;
     display: flex;
     flex-direction: column;
     gap: 15.7px;
+    @media screen and (max-width: $size-of-tablet) {
+      gap: 20px;
+    }
+    @media screen and (max-width: $size-of-mobile) {
+      margin: 19px 0 17px 4px;
+    }
+    &_hide {
+      display: flex;
+
+      @media screen and (max-width: $size-of-mobile) {
+        display: none;
+      }
+    }
   }
   &__item {
     font-size: 16px;
     font-weight: 500;
   }
   &__label {
+    cursor: pointer;
     &:before {
-      content: '';
+      content: "";
       display: inline-block;
       width: 10px;
       height: 10px;
       background-color: inherit;
       border-radius: 90%;
-      outline: 1px solid #CDCDCD;
+      outline: 1px solid #cdcdcd;
       outline-offset: 2px;
       margin-right: 12px;
       cursor: pointer;
@@ -48,6 +93,43 @@ $size-of-mobile: 450px;
 
     &:checked ~ .filter-list__label::before {
       background-color: var(--color-of-text);
+    }
+  }
+  &__button {
+    width: 12px;
+    height: 12px;
+    border: none;
+    background-color: inherit;
+    position: relative;
+    margin-left: auto;
+    align-self: center;
+    &:hover {
+      &::after,
+      &::before {
+        transform: scale(1.5);
+      }
+    }
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      background-color: var(--color-of-text);
+      position: absolute;
+    }
+    &::before {
+      left: 0;
+      top: 5px;
+      width: 12px;
+      height: 2px;
+      opacity: 1;
+    }
+    &_open {
+      &::after {
+        width: 2px;
+        height: 12px;
+        left: 5px;
+        top: 0;
+      }
     }
   }
 }

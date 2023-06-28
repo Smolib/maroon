@@ -1,5 +1,5 @@
-$size-of-tablet: 800px;
-$size-of-mobile: 450px;
+$size-of-tablet: 900px;
+$size-of-mobile: 700px;
 .filter {
   display: grid;
   grid-template-columns: 133px 187px 302px;
@@ -7,10 +7,27 @@ $size-of-mobile: 450px;
   grid-template-rows: repeat(2, auto);
   margin: auto;
   width: 768px;
+  @media screen and (max-width: $size-of-tablet) {
+    gap: 38px 60px;
+    grid-template-columns: 133px 187px minmax(168px, 1fr);
+    width: 100%;
+  }
+  @media screen and (max-width: $size-of-mobile) {
+    gap: 16px 60px;
+    grid-template-columns: 250px;
+    justify-content: center;
+  }
   &__button-area {
     display: flex;
     flex-direction: row;
     gap: 20px;
+    @media screen and (max-width: $size-of-tablet) {
+      grid-column: 1 / span 3;
+      justify-content: center;
+    }
+    @media screen and (max-width: $size-of-mobile) {
+      grid-column: auto;
+    }
   }
   &__button {
     width: 141px;
@@ -43,7 +60,7 @@ $size-of-mobile: 450px;
     @media screen and (max-width: $size-of-mobile) {
       font-size: 14px;
       line-height: 20px;
-      margin: 23px auto 0;
+      margin: 15px auto 0;
     }
   }
 }

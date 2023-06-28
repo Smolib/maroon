@@ -1,13 +1,25 @@
+$size-of-tablet: 900px;
+$size-of-mobile: 700px;
 .filter-section {
   max-width: 1366px;
   margin: auto;
   padding: 142px 93px 48px 98px;
   display: flex;
+
+  @media screen and (max-width: $size-of-tablet) {
+    padding: 142px 41px 48px 45px;
+  }
+  @media screen and (max-width: $size-of-mobile) {
+    padding: 110px 8px 48px 15px;
+  }
   &__title {
     margin: 0;
     font-family: var(--font-of-title);
     font-size: 36px;
     font-weight: 500;
+    @media screen and (max-width: $size-of-mobile) {
+      font-size: 28px;
+    }
   }
   &__button {
     margin-left: auto;
@@ -19,19 +31,27 @@
       font-size: 16px;
       font-weight: 500;
       margin-right: 5px;
-
+      @media screen and (max-width: $size-of-mobile) {
+        font-size: 14px;
+        padding: 3px 25px 8px;
+      }
     }
-    &_close{
+    &_close {
       border: none;
-
     }
   }
   &__filter-area {
+    z-index: 10;
     position: absolute;
     width: 100%;
-    padding-bottom: 120px;
+    padding: 0 45px 120px;
+    box-sizing: border-box;
     top: 221px;
     left: 0;
     background-color: var(--color-of-main-background);
+    @media screen and (max-width: $size-of-mobile) {
+      padding: 0 35px 120px;
+      top: 182px;
+    }
   }
 }
