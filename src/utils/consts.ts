@@ -32,7 +32,7 @@ export const FilterSettings: TypeOfFilter[] = [
   },
 ];
 
-export const FilterContextDefaultData: TypeOfSettingsFilter = {
+export const FilterDefaultData: TypeOfSettingsFilter = {
   body: [],
   face: [],
   skin: [],

@@ -1,0 +1,41 @@
+.item {
+  text-decoration: none;
+  transition: opacity 1s, transform 1s;
+  max-width: 270px;
+  &:hover {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+  &__article {
+    height: 350px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 19px;
+    box-sizing: border-box;
+  }
+  &__info-wrapper {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    color: var(--color-of-text);
+    font-size: 13px;
+    text-decoration: none;
+    gap: 0 10px;
+  }
+  &__title {
+    font-weight: 400;
+    margin: 0;
+    font-size: 16px;
+  }
+  &__price {
+    text-align: right;
+  }
+  &__description {
+    color: var(--color-of-gray-text);
+  }
+  &__volume {
+    text-align: right;
+    color: var(--color-of-gray-text);
+  }
+}

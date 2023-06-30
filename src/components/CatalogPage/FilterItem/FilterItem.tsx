@@ -1,30 +1,46 @@
-import { useContext, useState } from "react";
-import SearchDataContext from "../../../context/SearchDataContext";
-import { TypeOfFilter } from "../../../types/filter";
+import {
+  Dispatch,
+  SetStateAction,
+  useEffect,
+  useState,
+} from "react";
+import { TypeOfFilter, TypeOfSettingsFilter } from "../../../types/filter";
 import { TypeOfItem } from "../../../types/item";
 
 type FilterItemProps = {
   name: TypeOfItem["category"] | TypeOfItem["skin"];
   useFor: TypeOfFilter["useFor"];
   title: TypeOfFilter["title"];
+  choosenValues: TypeOfSettingsFilter;
+  setChoosenValues: Dispatch<SetStateAction<TypeOfSettingsFilter>>;
 };
 
 function FilterItem({
   name,
   useFor,
   title,
+  choosenValues,
+  setChoosenValues,
 }: FilterItemProps) {
-  const { searchData, setSearchData } = useContext(SearchDataContext);
-  const [isChoose, setIsChoose] = useState((searchData[useFor] as TypeOfFilter["keys"]).includes(name));
+  const [isChoose, setIsChoose] = useState(
+    (choosenValues[useFor] as TypeOfFilter["keys"]).includes(name),
+  );
+  useEffect(() => {
+    setIsChoose((choosenValues[useFor] as TypeOfFilter["keys"]).includes(name));
+  }, [choosenValues]);
   const handleClick = () => {
     if (isChoose) {
-      const newData = (searchData[useFor]as TypeOfFilter["keys"]).filter((i) => i !== name);
-      setSearchData({
-        ...searchData, [useFor]: newData,
+      const newData = (choosenValues[useFor] as TypeOfFilter["keys"]).filter(
+        (i) => i !== name,
+      );
+      setChoosenValues({
+        ...choosenValues,
+        [useFor]: newData,
       });
     } else {
-      setSearchData({
-        ...searchData, [useFor]: [...searchData[useFor], name],
+      setChoosenValues({
+        ...choosenValues,
+        [useFor]: [...choosenValues[useFor], name],
       });
     }
   };

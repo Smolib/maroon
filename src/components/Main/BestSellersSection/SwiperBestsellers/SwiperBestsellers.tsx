@@ -7,7 +7,7 @@ import "swiper/scss/navigation";
 import BestSellerCard from "./BestSellerCard/BestSellerCard";
 import items from "../../../../mocks/items";
 import "./SwiperBestsellers.scss";
-import NavigateButton from "../../../utils-components/SlidePrevButton/NavigateButton";
+import NavigateButton from "../../../utils-components/NavigateButton/NavigateButton";
 import useSettingsMainSwiper from "../../../../hooks/useSettingsMainSwiper";
 
 type SwiperBestsellersProps = {

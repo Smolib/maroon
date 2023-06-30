@@ -17,4 +17,6 @@ export type TypeOfSettingsFilter = {
 export type TypeOfSeacrhContext = {
   searchData: TypeOfSettingsFilter;
   setSearchData: Dispatch<SetStateAction<TypeOfSettingsFilter>>;
+  currentItems: TypeOfItem[];
+  setCurrentItems: Dispatch<SetStateAction<TypeOfItem[]>>;
 };

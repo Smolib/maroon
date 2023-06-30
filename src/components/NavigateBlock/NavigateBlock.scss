@@ -1,0 +1,32 @@
+.navigate-block {
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+  padding: 46px 93px;
+  max-width: 1366px;
+  &__paging-area {
+    grid-column: 2/2;
+    justify-self: center;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+  &__page {
+    &_gray {
+      color: var(--color-of-gray-text);
+    }
+  }
+  &__decor {
+    width: 50px;
+    height: 2px;
+    background-color: var(--color-of-text);
+    align-self: center;
+    &_gray {
+      background-color: var(--color-of-gray-text);
+    }
+  }
+  &__buttons-area {
+    display: flex;
+    gap: 24px;
+    justify-content: end;
+  }
+}
