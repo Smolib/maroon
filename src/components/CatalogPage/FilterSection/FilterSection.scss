@@ -7,10 +7,10 @@ $size-of-mobile: 700px;
   display: flex;
 
   @media screen and (max-width: $size-of-tablet) {
-    padding: 142px 41px 48px 45px;
+    padding: 142px 41px 40px 45px;
   }
   @media screen and (max-width: $size-of-mobile) {
-    padding: 110px 8px 48px 15px;
+    padding: 106px 8px 40px 15px;
   }
   &__title {
     margin: 0;
@@ -33,7 +33,7 @@ $size-of-mobile: 700px;
       margin-right: 5px;
       @media screen and (max-width: $size-of-mobile) {
         font-size: 14px;
-        padding: 3px 25px 8px;
+        padding: 9px 29px 13px;
       }
     }
     &_close {

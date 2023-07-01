@@ -8,9 +8,15 @@ type CardsSectionProps = {
   items: TypeOfItem[];
   page: number;
   maxItemsOnPage: number;
+  emptyText: string[];
 };
 
-function CardsSection({ items, page, maxItemsOnPage }: CardsSectionProps) {
+function CardsSection({
+  items,
+  page,
+  maxItemsOnPage,
+  emptyText,
+}: CardsSectionProps) {
   const [visibleItems, setVisibleItems] = useState<TypeOfItem[]>([]);
   useEffect(() => {
     const newItems = getVisibleItems(items, maxItemsOnPage, page);
@@ -20,12 +26,11 @@ function CardsSection({ items, page, maxItemsOnPage }: CardsSectionProps) {
     <section className="card-section">
       {visibleItems.length === 0 ? (
         <>
-          <span className="card-section__empty-text">
-            Упс!
-            По данным запросам ничего не найдено.</span>
-          <span className="card-section__empty-text">
-            Попробуйте изменить настройки поиска.
-          </span>
+          {emptyText.map((text, i) => (
+            <span key={i} className="card-section__empty-text">
+              {text}
+            </span>
+          ))}
         </>
       ) : (
         visibleItems.map((item) => (

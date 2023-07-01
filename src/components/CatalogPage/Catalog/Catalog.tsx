@@ -50,6 +50,10 @@ function Catalog() {
           items={currentItems}
           page={currentPage}
           maxItemsOnPage={maxItemsOnPage}
+          emptyText={[
+            "Упс! По данным запросам ничего не найдено.",
+            "Попробуйте изменить настройки поиска.",
+          ]}
         />
         <NavigateBlock
           isSwiper={false}
