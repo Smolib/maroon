@@ -7,7 +7,7 @@ import { TypeOfSettingsFilter } from "../../../types/filter";
 import { TypeOfItem } from "../../../types/item";
 import { getItems, getMaxPage } from "../../../utils/catalog";
 import NavigateBlock from "../../NavigateBlock/NavigateBlock";
-import { filterItems } from "../../../utils/filter";
+import { filterItems, getVisibleItems } from "../../../utils/filter";
 
 function Catalog() {
   const maxItemsOnPage = 12;
@@ -15,6 +15,7 @@ function Catalog() {
   const [currentItems, setCurrentItems] = useState<TypeOfItem[]>(getItems());
   const [currentPage, setCurrentPage] = useState(1);
   const [maxPage, setMaxPage] = useState(1);
+  const [visibleItems, setVisibleItems] = useState<TypeOfItem[]>([]);
   useEffect(() => {
     setCurrentItems(filterItems(searchData));
   }, [searchData]);
@@ -35,6 +36,12 @@ function Catalog() {
     setCurrentPage(currentPage + 1);
     window.scrollTo(0, 0);
   };
+
+  useEffect(() => {
+    const newItems = getVisibleItems(currentItems, maxItemsOnPage, currentPage);
+    setVisibleItems(newItems);
+  }, [currentItems, maxItemsOnPage, currentPage]);
+
   return (
     <SearchDataContext.Provider
       value={{
@@ -47,9 +54,7 @@ function Catalog() {
       <section>
         <FilterSection />
         <CardsSection
-          items={currentItems}
-          page={currentPage}
-          maxItemsOnPage={maxItemsOnPage}
+          items={visibleItems}
           emptyText={[
             "Упс! По данным запросам ничего не найдено.",
             "Попробуйте изменить настройки поиска.",
