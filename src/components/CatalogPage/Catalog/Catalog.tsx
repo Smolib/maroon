@@ -11,7 +11,8 @@ import { filterItems, getVisibleItems } from "../../../utils/filter";
 
 function Catalog() {
   const maxItemsOnPage = 12;
-  const [searchData, setSearchData] = useState<TypeOfSettingsFilter>(FilterDefaultData);
+  const [searchData, setSearchData] =
+    useState<TypeOfSettingsFilter>(FilterDefaultData);
   const [currentItems, setCurrentItems] = useState<TypeOfItem[]>(getItems());
   const [currentPage, setCurrentPage] = useState(1);
   const [maxPage, setMaxPage] = useState(1);
@@ -59,14 +60,15 @@ function Catalog() {
             "Упс! По данным запросам ничего не найдено.",
             "Попробуйте изменить настройки поиска.",
           ]}
-        />
-        <NavigateBlock
-          isSwiper={false}
-          onClickLeftButton={handleClickLeftButton}
-          onClickRightButton={handleClickRightButton}
-          page={currentPage}
-          maxPage={maxPage}
-        />
+        >
+          <NavigateBlock
+            isSwiper={false}
+            onClickLeftButton={handleClickLeftButton}
+            onClickRightButton={handleClickRightButton}
+            page={currentPage}
+            maxPage={maxPage}
+          />
+        </CardsSection>
       </section>
     </SearchDataContext.Provider>
   );

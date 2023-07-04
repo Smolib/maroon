@@ -6,19 +6,25 @@ $size-of-mobile: 450px;
   box-sizing: border-box;
   max-width: 1366px;
   margin: auto;
-  gap: 30px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-
   @media screen and (max-width: $size-of-tablet) {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 0 45px;
+    padding: 0 45px 45px;
   }
   @media screen and (max-width: $size-of-mobile) {
-    grid-template-columns: repeat(1, 1fr);
-    padding: 0 15px;
+    padding:0 15px;
   }
+  &__cards-area {
+    gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
 
+    @media screen and (max-width: $size-of-tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (max-width: $size-of-mobile) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
   &__navigate-area {
     display: grid;
     grid-template-columns: 100px 1fr 100px;

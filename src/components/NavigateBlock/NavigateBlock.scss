@@ -4,14 +4,17 @@ $size-of-mobile: 450px;
 .navigate-block {
   display: grid;
   grid-template-columns: 100px 1fr 100px;
-  padding: 46px 93px;
   max-width: 1366px;
+  width: 100%;
+  margin-top: 45px;
+  box-sizing: border-box;
   @media screen and (max-width: $size-of-tablet) {
-    padding: 46px 40px;
+    padding: 46px 0 0;
+    margin-top: 0;
   }
   @media screen and (max-width: $size-of-mobile) {
     grid-template-columns: 1fr 100px;
-    padding: 31px 10px 0 14px;
+    padding: 30px 0 0;
   }
   &__paging-area {
     grid-column: 2/2;
@@ -25,6 +28,9 @@ $size-of-mobile: 450px;
     }
   }
   &__page {
+    @media screen and (max-width: $size-of-mobile) {
+      font-size: 14px;
+    }
     &_gray {
       color: var(--color-of-gray-text);
     }
@@ -45,6 +51,8 @@ $size-of-mobile: 450px;
     display: flex;
     gap: 24px;
     justify-content: end;
+    position: relative;
+    right: -5px;
     @media screen and (max-width: $size-of-mobile) {
       gap: 19px;
     }

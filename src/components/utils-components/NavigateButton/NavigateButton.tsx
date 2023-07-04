@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
 import "./NavigateButton.scss";
-import { MouseEventHandler } from "react";
+import { MouseEvent, MouseEventHandler } from "react";
 import { useSwiper } from "swiper/react";
 import leftArrow from "../../../images/left-arrow.svg";
 import rigthArrow from "../../../images/rigth-arrow.svg";
@@ -15,16 +15,20 @@ function NavigateButton({
   direction,
   isSwiper,
 }: NavigateButtonProps) {
-  if (isSwiper && direction === "left") {
-    const swiper = useSwiper();
-    onClickHandle = () => swiper.slidePrev();
-  }
-  if (isSwiper && direction === "right") {
-    const swiper = useSwiper();
-    onClickHandle = () => swiper.slideNext();
-  }
+  const swiper = useSwiper();
+  const handleClick = (evt: MouseEvent<HTMLButtonElement>) => {
+    if (onClickHandle) {
+      onClickHandle(evt);
+    }
+    if (isSwiper && direction === "left") {
+      swiper.slidePrev();
+    }
+    if (isSwiper && direction === "right") {
+      swiper.slideNext();
+    }
+  };
   return (
-    <button className="navigate-button" onClick={onClickHandle}>
+    <button className="navigate-button" onClick={handleClick}>
       {direction === "left" ? (
         <img src={leftArrow} />
       ) : (

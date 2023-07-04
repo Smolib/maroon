@@ -1,8 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Scrollbar } from "swiper";
-// eslint-disable-next-line import/no-unresolved
 import "swiper/css";
-// eslint-disable-next-line import/no-unresolved
 import "swiper/scss/navigation";
 import BestSellerCard from "./BestSellerCard/BestSellerCard";
 import items from "../../../../mocks/items";

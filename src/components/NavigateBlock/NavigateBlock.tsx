@@ -4,8 +4,8 @@ import NavigateButton from "../utils-components/NavigateButton/NavigateButton";
 
 type NavigateBlockProps = {
   isSwiper: boolean;
-  onClickLeftButton: MouseEventHandler<HTMLButtonElement>;
-  onClickRightButton: MouseEventHandler<HTMLButtonElement>;
+  onClickLeftButton?: MouseEventHandler<HTMLButtonElement>;
+  onClickRightButton?: MouseEventHandler<HTMLButtonElement>;
   page: number;
   maxPage: number;
 };

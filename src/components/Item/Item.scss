@@ -2,19 +2,18 @@ $size-of-tablet: 900px;
 $size-of-mobile: 450px;
 .item {
   text-decoration: none;
-  transition: opacity 1s, transform 1s;
   max-width: 270px;
+  width: 100%;
+  margin: auto;
   @media screen and (max-width: $size-of-tablet) {
     max-width: 350px;
   }
   @media screen and (max-width: $size-of-mobile) {
     max-width: 290px;
   }
-  &:hover {
-    opacity: 0.7;
-    transform: scale(1.05);
-  }
   &__article {
+    margin: auto;
+    max-width: 270px;
     height: 350px;
     text-decoration: none;
     display: flex;
@@ -22,12 +21,19 @@ $size-of-mobile: 450px;
     justify-content: end;
     padding: 19px;
     box-sizing: border-box;
+    transition: opacity 1s, transform 1s;
+    &:hover {
+      opacity: 0.7;
+      transform: scale(1.05);
+    }
     @media screen and (max-width: $size-of-tablet) {
-     background-position: center;
-     background-size: cover;
+      background-position: center;
+      background-size: cover;
+      max-width: 350px;
     }
     @media screen and (max-width: $size-of-mobile) {
       height: 290px;
+      max-width: 290px;
     }
   }
   &__info-wrapper {
