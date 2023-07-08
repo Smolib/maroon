@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { TypeOfItem } from "../../types/item";
 import "./Item.scss";
+import { AppRoute } from "../../utils/consts";
 
 type BestSellerCardProps = {
   name: TypeOfItem["name"];
@@ -9,6 +10,7 @@ type BestSellerCardProps = {
   price: TypeOfItem["price"];
   volume: TypeOfItem["volume"];
   units: TypeOfItem["units"];
+  id: TypeOfItem["id"];
 };
 
 function Item({
@@ -18,13 +20,14 @@ function Item({
   shortDescription,
   volume,
   units,
+  id,
 }: BestSellerCardProps) {
   const style = {
     backgroundImage: `url(${image})`,
   };
 
   return (
-    <Link className="item" to={""}>
+    <Link className="item" to={`${AppRoute.ItemRoute}/${id}`}>
       <article className="item__article" style={style}>
         <div className="item__info-wrapper">
           <h3 className="item__title">{name}</h3>

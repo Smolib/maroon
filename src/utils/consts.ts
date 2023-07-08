@@ -3,7 +3,8 @@ import { TypeOfFilter, TypeOfSettingsFilter } from "../types/filter";
 export enum AppRoute {
   Main = "/",
   Catalog = "/catalog",
-  Item = "/item/:id",
+  ItemRoutes = "/item/:id",
+  ItemRoute = "/item",
 }
 
 export enum SearchFaceOrBody {

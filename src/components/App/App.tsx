@@ -7,6 +7,7 @@ import ScrollToTop from "../utils-components/ScrollToTop/ScrollToTop";
 import browserHistory from "../../utils/browser-history";
 import CatalogPage from "../CatalogPage/CatalogPage";
 import NotFound from "../NotFound/NotFound";
+import ItemPage from "../ItemPage/ItemPage";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         <Route path={AppRoute.Main} element={<Layout />}>
           <Route index element={<Main />} />
           <Route path={AppRoute.Catalog} element={<CatalogPage />} />
-          <Route path={AppRoute.Item} element={<Main />} />
+          <Route path={`${AppRoute.ItemRoutes}`} element={<ItemPage />} />
           <Route path="*" element={<NotFound/>} />
         </Route>
       </Routes>

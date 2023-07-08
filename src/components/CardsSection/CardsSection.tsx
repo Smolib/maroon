@@ -31,6 +31,7 @@ function CardsSection({ items, emptyText, children }: CardsSectionProps) {
               price={item.price}
               volume={item.volume}
               units={item.units}
+              id={item.id}
             />
           ))
         )}

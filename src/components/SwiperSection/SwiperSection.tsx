@@ -20,8 +20,9 @@ type SwiperSectionProps = {
 
 function SwiperSection({ title, items }: SwiperSectionProps) {
   const width = useCurrentWidth();
-  const { slidesPerView, slidesPerGroup, spaceBetween, gridRow } =
-    useSettingsLastWatchSwiper(width);
+  const {
+    slidesPerView, slidesPerGroup, spaceBetween, gridRow,
+  } = useSettingsLastWatchSwiper(width);
   const [currentPage, setCurrentPage] = useState(1);
   const [maxPage, setMaxPage] = useState(1);
   useEffect(() => {
@@ -79,6 +80,7 @@ function SwiperSection({ title, items }: SwiperSectionProps) {
               price={item.price}
               volume={item.volume}
               units={item.units}
+              id={item.id}
             />
           </SwiperSlide>
         ))}
