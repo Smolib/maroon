@@ -2,14 +2,14 @@ $size-of-tablet: 800px;
 $size-of-mobile: 550px;
 .two-colored-block {
   width: 100%;
-  padding: 137px 0 140px 98px;
+  padding-left: 98px;
   box-sizing: border-box;
   overflow: hidden;
   @media screen and (max-width: $size-of-tablet) {
-    padding: 119px 0 119px 45px;
+    padding-left: 45px;
   }
   @media screen and (max-width: $size-of-mobile) {
-    padding: 80px 15px 106px;
+    padding: 0px 15px 26px;
   }
   &__wrapper {
     max-width: 1366px;

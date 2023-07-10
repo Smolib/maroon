@@ -11,8 +11,7 @@ import { filterItems, getVisibleItems } from "../../../utils/filter";
 
 function Catalog() {
   const maxItemsOnPage = 12;
-  const [searchData, setSearchData] =
-    useState<TypeOfSettingsFilter>(FilterDefaultData);
+  const [searchData, setSearchData] = useState<TypeOfSettingsFilter>(FilterDefaultData);
   const [currentItems, setCurrentItems] = useState<TypeOfItem[]>(getItems());
   const [currentPage, setCurrentPage] = useState(1);
   const [maxPage, setMaxPage] = useState(1);

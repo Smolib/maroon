@@ -10,7 +10,7 @@ $size-of-mobile: 450px;
   box-sizing: border-box;
   @media screen and (max-width: $size-of-tablet) {
     padding: 46px 0 0;
-    margin-top: 0;
+    margin: 1px 0 -3px;
   }
   @media screen and (max-width: $size-of-mobile) {
     grid-template-columns: 1fr 100px;
@@ -49,12 +49,10 @@ $size-of-mobile: 450px;
   }
   &__buttons-area {
     display: flex;
-    gap: 24px;
+    gap: 32px;
     justify-content: end;
-    position: relative;
-    right: -5px;
     @media screen and (max-width: $size-of-mobile) {
-      gap: 19px;
+      gap: 27px;
     }
   }
 }

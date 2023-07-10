@@ -1,22 +1,21 @@
 $size-of-tablet: 800px;
 $size-of-mobile: 450px;
 .bestsellers {
-  margin: 0 auto 56px;
+  margin: 0 auto;
   overflow: hidden;
   padding: 0 0 0 98px;
   display: flex;
+  width: 100%;
   max-width: 1366px;
   box-sizing: border-box;
   gap: 86px;
   @media screen and (max-width: $size-of-tablet) {
     padding-left: 45px;
-    margin-bottom: 36px;
     gap: 39px;
   }
   @media screen and (max-width: $size-of-mobile) {
     flex-direction: column;
     gap: 0;
-    margin: 73px 0 80px;
     padding: 0;
     align-items: center;
   }
@@ -25,11 +24,16 @@ $size-of-mobile: 450px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-bottom: 50px;
+    @media screen and (max-width: $size-of-tablet) {
+      padding-bottom: 33px;
+    }
     @media screen and (max-width: $size-of-mobile) {
       width: 100%;
       align-items: center;
       max-width: 190px;
-      padding: 0 0 44px;
+      padding: 0 0 45px;
+      margin-top: -8px;
     }
   }
   &__title {
@@ -91,7 +95,7 @@ $size-of-mobile: 450px;
     @media screen and (max-width: $size-of-mobile) {
       font-size: 14px;
       line-height: 20px;
-      margin: 25px auto 0;
+      margin: 40px auto 0;
       padding: 8px 28px 10px;
     }
   }

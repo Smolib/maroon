@@ -1,3 +1,6 @@
+$size-of-tablet: 900px;
+$size-of-mobile: 450px;
+
 @import url(./vendor/normalize.css);
 @import url(./vendor/fonts/fonts.css);
 
@@ -68,4 +71,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  row-gap: 140px;
+  @media screen and (max-width: $size-of-tablet) {
+    row-gap: 120px;
+  }
+  @media screen and (max-width: $size-of-tablet) {
+    row-gap: 80px;
+  }
 }

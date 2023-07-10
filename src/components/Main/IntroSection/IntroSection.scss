@@ -2,18 +2,15 @@ $size-of-tablet: 800px;
 $size-of-mobile: 450px;
 
 .intro {
-  padding: 103px 0 70px;
   width: 100%;
   display: flex;
   justify-content: center;
   background-image: url("../../../images/intro-background.png");
   background-repeat: no-repeat;
+  padding-top: 102px;
 
-  @media screen and (max-width: $size-of-tablet) {
-    padding-bottom: 68px;
-  }
   @media screen and (max-width: $size-of-mobile) {
-    padding: 268px 0 58px;
+    padding-top: 268px;
   }
 
   &__wrapper {
@@ -22,7 +19,7 @@ $size-of-mobile: 450px;
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
-    padding: 28px 0 0;
+    padding: 28px 0 67px;
     margin: 0 calc((100% - 1060px) / 2 + 15px);
     position: relative;
 
@@ -34,6 +31,7 @@ $size-of-mobile: 450px;
     @media screen and (max-width: $size-of-mobile) {
       margin: 0 15px;
       gap: 30px;
+      padding-bottom: 58px;
       justify-content: space-around;
     }
   }
@@ -45,13 +43,13 @@ $size-of-mobile: 450px;
     flex-direction: column;
     align-items: center;
     position: absolute;
-    top: calc(50% - 63px);
+    top: calc(50% - 97px);
     left: 50%;
     transform: translate(-50%, -50%);
     pointer-events: none;
 
     @media screen and (max-width: $size-of-tablet) {
-      top: calc(50% - 45px);
+      top: calc(50% - 78px);
     }
     @media screen and (max-width: $size-of-mobile) {
       top: -90px;
