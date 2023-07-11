@@ -1,3 +1,5 @@
+import { AppRoute } from "../../../utils/consts";
+import LinkButton from "../../utils-components/LinkButton/LinkButton";
 import "./NewCollectionSection.scss";
 
 function NewCollectionSection() {
@@ -10,7 +12,7 @@ function NewCollectionSection() {
         <p className="new-collection__text">
           Попробуйте новую коллекцию ухаживающих средств для лица с SPF защитой
         </p>
-        <button className="new-collection__button">Подробнее</button>
+        <LinkButton text={"Подробнее"} onClick={AppRoute.Catalog} />
       </div>
     </section>
   );

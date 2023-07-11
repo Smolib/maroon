@@ -1,6 +1,8 @@
 import "./FillFormSection.scss";
 import picture from "../../../images/fill-form-pic.png";
 import TwoColoredBlock from "../../utils-components/TwoColoredBlock/TwoColoredBlock";
+import LinkButton from "../../utils-components/LinkButton/LinkButton";
+import { AppRoute } from "../../../utils/consts";
 
 function FillFormSection() {
   return (
@@ -16,9 +18,7 @@ function FillFormSection() {
           Заполните анкету, и&nbsp;мы подберем уход, подходящий именно вам,
           учитывая ваш образ жизни, место жительства и&nbsp;другие факторы.
         </p>
-        <button className="fill-form-colored__button">
-          <span className="fill-form-colored__button-name">Заполнить анкету</span>
-        </button>
+        <LinkButton text={"Заполнить анкету"} onClick={AppRoute.FillForm} />
       </div>
       <div className="fill-form-non-colored">
         <img className="fill-form-non-colored__picture" src={picture} />

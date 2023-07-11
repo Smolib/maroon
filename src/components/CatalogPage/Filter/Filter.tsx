@@ -1,21 +1,23 @@
 import {
-  Dispatch,
-  FormEvent,
-  SetStateAction,
-  useContext,
+  Dispatch, FormEvent, SetStateAction, useContext,
 } from "react";
 import { FilterDefaultData, FilterSettings } from "../../../utils/consts";
 import FilterList from "../FilterList/FilterList";
 import "./Filter.scss";
 import SearchDataContext from "../../../context/SearchDataContext";
 import { TypeOfSettingsFilter } from "../../../types/filter";
+import LinkButton from "../../utils-components/LinkButton/LinkButton";
 
 type FilterProps = {
   setIsMenuOpened: Dispatch<SetStateAction<boolean>>;
   choosenValues: TypeOfSettingsFilter;
   setChoosenValues: Dispatch<SetStateAction<TypeOfSettingsFilter>>;
 };
-function Filter({ setIsMenuOpened, choosenValues, setChoosenValues }: FilterProps) {
+function Filter({
+  setIsMenuOpened,
+  choosenValues,
+  setChoosenValues,
+}: FilterProps) {
   const { setSearchData } = useContext(SearchDataContext);
   const handleSubmit = (evt: FormEvent<EventTarget>) => {
     evt.preventDefault();
@@ -38,12 +40,8 @@ function Filter({ setIsMenuOpened, choosenValues, setChoosenValues }: FilterProp
         />
       ))}
       <div className="filter__button-area">
-        <button className="filter__button" onClick={handleSubmit}>
-          Применить
-        </button>
-        <button type="reset" className="filter__button" onClick={handleReset}>
-          Сбросить
-        </button>
+        <LinkButton text={"Применить"} onClick={handleSubmit} />
+        <LinkButton text={"Сбросить"} onClick={handleReset} />
       </div>
     </form>
   );

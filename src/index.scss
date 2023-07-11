@@ -75,7 +75,7 @@ body {
   @media screen and (max-width: $size-of-tablet) {
     row-gap: 120px;
   }
-  @media screen and (max-width: $size-of-tablet) {
+  @media screen and (max-width: $size-of-mobile) {
     row-gap: 80px;
   }
 }

@@ -48,9 +48,9 @@ $size-of-mobile: 450px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: self-start;
     padding: 0 0 10px 10%;
     max-width: 390px;
-    gap: 15px;
 
     @media screen and (max-width: $size-of-tablet) {
       padding-left: 0;
@@ -59,6 +59,7 @@ $size-of-mobile: 450px;
       order: -1;
       gap: 12px;
       padding-bottom: 51px;
+      align-items: center;
     }
   }
   &__title {
@@ -78,13 +79,14 @@ $size-of-mobile: 450px;
     }
   }
   &__text {
-    margin: 0;
+    margin: 14px 0 33px;
     font-size: 18px;
     line-height: 26px;
     @media screen and (max-width: $size-of-mobile) {
       font-size: 16px;
       line-height: 22px;
       text-align: center;
+      margin: 0 0 13px;
     }
   }
   &__link {

@@ -78,47 +78,12 @@ $size-of-mobile: 450px;
     font-family: var(--font-of-text);
     font-weight: 400;
     line-height: 26px;
-    margin: 12px 0 0;
+    margin: 12px 0 33px;
 
     @media screen and (max-width: $size-of-mobile) {
       font-size: 16px;
-      margin-top: 8px;
+      margin: 8px 0 23px;
       line-height: 22px;
-    }
-  }
-
-  &__button {
-    margin-top: 33px;
-    padding: 8px 27px 9px;
-    border: 1px solid var(--color-of-border-button);
-    border-radius: 2px;
-    background-color: inherit;
-    font-size: 16px;
-    line-height: 22px;
-    cursor: pointer;
-    pointer-events: all;
-    position: relative;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 0;
-      height: 100%;
-      background: #f1eae4;
-      transition: all 1s ease;
-      z-index: -1;
-    }
-    &:hover::before,
-    &:focus::before {
-      width: 100%;
-    }
-
-    @media screen and (max-width: $size-of-mobile) {
-      font-size: 14px;
-      line-height: 20px;
-      margin-top: 23px;
     }
   }
 

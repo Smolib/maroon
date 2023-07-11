@@ -1,5 +1,6 @@
 import "./IntroSection.scss";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import introPic1 from "../../../images/intro-pic1.png";
 import introPic2 from "../../../images/intro-pic2.png";
 import introPic1Tablet from "../../../images/intro-pic1-tablet.png";
@@ -7,6 +8,8 @@ import introPic2Tablet from "../../../images/intro-pic2-tablet.png";
 import introPic1Mobile from "../../../images/intro-pic1-mobile.png";
 import introPic2Mobile from "../../../images/intro-pic2-mobile.png";
 import arrow from "../../../images/arrow.svg";
+import LinkButton from "../../utils-components/LinkButton/LinkButton";
+import { AppRoute } from "../../../utils/consts";
 
 function IntroSection() {
   const [windowSize, setWindowSize] = useState(0);
@@ -48,7 +51,7 @@ function IntroSection() {
   return (
     <section className="intro">
       <div className="intro__wrapper">
-        <a className="intro__link" href="">
+        <Link className="intro__link" to={AppRoute.Catalog}>
           <figure className="intro__figure">
             <img
               className="intro__picture"
@@ -60,15 +63,15 @@ function IntroSection() {
               <img src={arrow} className="intro__arrow" />
             </figcaption>
           </figure>
-        </a>
+        </Link>
         <div className="intro__about">
           <h1 className="intro__title">Maroon</h1>
           <p className="intro__description">
             Натуральная косметика для&nbsp;бережного ухода за&nbsp;кожей
           </p>
-          <button className="intro__button">Подробнее</button>
+          <LinkButton text={"Подробнее"} onClick={AppRoute.AboutThisPage} />
         </div>
-        <a className="intro__link" href="">
+        <Link className="intro__link" to={AppRoute.Catalog}>
           <figure className="intro__figure">
             <img
               className="intro__picture"
@@ -80,7 +83,7 @@ function IntroSection() {
               <img src={arrow} className="intro__arrow" />
             </figcaption>
           </figure>
-        </a>
+        </Link>
       </div>
     </section>
   );

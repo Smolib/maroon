@@ -7,6 +7,9 @@ $size-of-mobile: 700px;
   padding: 0;
   @media screen and (max-width: $size-of-mobile) {
     grid-row: auto;
+    &:last-of-type {
+      margin-bottom: 15px;
+    }
   }
   &:nth-last-of-type(1) {
     grid-row: 1 / 1;

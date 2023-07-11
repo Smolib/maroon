@@ -5,6 +5,10 @@ export enum AppRoute {
   Catalog = "/catalog",
   ItemRoutes = "/item/:id",
   ItemRoute = "/item",
+  About = "/#about",
+  AboutThisPage = "#about",
+  FillForm = "/fill-form",
+  Subscribe = "/subscribe"
 }
 
 export enum SearchFaceOrBody {
