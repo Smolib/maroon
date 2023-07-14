@@ -1,12 +1,13 @@
 import "./Header.scss";
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logoSvg from "../../images/logo.svg";
 import profileSvg from "../../images/profile.svg";
 import cartSvg from "../../images/cart.svg";
 import burger from "../../images/burger.svg";
 import close from "../../images/close.svg";
 import SocialsList from "../utils-components/SocialsList/SocialsList";
+import Nav from "../Nav/Nav";
 import { AppRoute } from "../../utils/consts";
 
 function Header() {
@@ -14,8 +15,6 @@ function Header() {
   const [isMenuColored, setIsMenuColored] = useState(false);
   const [windowWidth, setWindowWidth] = useState(0);
   const [scroll, setScroll] = useState(0);
-
-  const { pathname } = useLocation();
 
   useEffect(() => {
     setScroll(window.scrollY);
@@ -66,46 +65,16 @@ function Header() {
           isMenuOpened ? "header__nav-area_open" : ""
         }`}
       >
-        <nav>
-          <ul className="header__nav-list">
-            <li className="header__nav-item">
-              <Link className="header__nav-link" to={"/catalog"}>
-                Каталог
-              </Link>
-            </li>
-            <li className="header__nav-item">
-              {pathname === AppRoute.Main ? (
-                <Link className="header__nav-link" to={"#about"}>
-                  О нас
-                </Link>
-              ) : (
-                <Link className="header__nav-link" to={"/#about"}>
-                  О нас
-                </Link>
-              )}
-            </li>
-            <li className="header__nav-item">
-              {pathname === AppRoute.Main || pathname === AppRoute.Catalog ? (
-                <Link className="header__nav-link" to={"#contacts"}>
-                  Контакты
-                </Link>
-              ) : (
-                <Link className="header__nav-link" to={"/#contacts"}>
-                  Контакты
-                </Link>
-              )}
-            </li>
-          </ul>
-        </nav>
+        <Nav type="header" />
         {windowWidth <= 800 && <SocialsList />}
       </div>
       <div className="header__buttons-area">
-        <button className="header__button">
+        <Link className="header__button" to={AppRoute.Profile}>
           <img className="header__button-icon" alt="Профиль" src={profileSvg} />
-        </button>
-        <button className="header__button">
+        </Link>
+        <Link className="header__button" to={AppRoute.Cart}>
           <img className="header__button-icon" alt="Профиль" src={cartSvg} />
-        </button>
+        </Link>
       </div>
     </header>
   );

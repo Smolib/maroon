@@ -1,5 +1,5 @@
 $size-of-tablet: 900px;
-$size-of-mobile: 700px;
+$size-of-mobile: 550px;
 $size-of-max-width: 1366px;
 
 .footer {
@@ -54,102 +54,7 @@ $size-of-max-width: 1366px;
       height: 15px;
     }
   }
-  &__nav {
-    margin-right: auto;
-    margin-left: 39px;
-    @media screen and (max-width: $size-of-tablet) {
-      margin-left: 21px;
-    }
-    @media screen and (max-width: $size-of-mobile) {
-      margin-left: 0;
-    }
-  }
-  &__nav-list {
-    display: flex;
-    padding: 0;
-    margin: 0;
-    gap: 41px;
 
-    @media screen and (max-width: $size-of-tablet) {
-      gap: 25px;
-    }
-    @media screen and (max-width: $size-of-mobile) {
-      max-width: 180px;
-      display: grid;
-      grid-template-columns: auto auto;
-      gap: 21px 29px;
-    }
-  }
-  &__nav-item {
-    list-style: none;
-    padding: 0;
-    font-family: var(--font-of-text);
-    font-size: calc(0.65vw + 7px);
-    letter-spacing: 0;
-    @media screen and (min-width: $size-of-max-width) {
-      font-size: 16px;
-    }
-
-    @media screen and (max-width: $size-of-tablet) {
-      font-size: 16px;
-    }
-    @media screen and (max-width: $size-of-mobile) {
-      font-size: 14px;
-    }
-  }
-  &__nav-link {
-    color: var(--color-of-text);
-    text-decoration: none;
-    outline: none;
-    position: relative;
-    &::before,
-    &::after {
-      top: 0;
-      position: absolute;
-      font-size: 16px;
-      font-family: var(--font-of-text);
-      color: var(--color-of-text);
-      display: inline-block;
-      opacity: 0;
-      transition: transform 0.3s, opacity 0.2s;
-      @media screen and (max-width: $size-of-tablet) {
-        font-size: 16px;
-        top: 4px;
-      }
-      @media screen and (max-width: $size-of-mobile) {
-        font-size: 16px;
-        top: 2px;
-      }
-    }
-    &::before {
-      left: -20px;
-      margin-right: 11px;
-      content: "[";
-      transform: translateX(20px);
-
-      @media screen and (max-width: $size-of-mobile) {
-        left: -10px;
-      }
-    }
-    &::after {
-      right: -20px;
-      margin-left: 11px;
-      content: "]";
-      transform: translateX(-20px);
-
-      @media screen and (max-width: $size-of-mobile) {
-        right: -10px;
-      }
-    }
-    &:hover,
-    &:focus {
-      &::before,
-      &::after {
-        opacity: 1;
-        transform: translateX(0px);
-      }
-    }
-  }
   &__copyright-area {
     padding: 20px 98px 18px;
     width: 100%;

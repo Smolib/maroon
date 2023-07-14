@@ -34,6 +34,7 @@ function SwiperBestsellers({ width }: SwiperBestsellersProps) {
             name={item.name}
             image={item.image}
             shortDescription={item.shortDescription}
+            id={item.id}
           />
         </SwiperSlide>
       ))}

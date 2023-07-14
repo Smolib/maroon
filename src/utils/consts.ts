@@ -8,7 +8,11 @@ export enum AppRoute {
   About = "/#about",
   AboutThisPage = "#about",
   FillForm = "/fill-form",
-  Subscribe = "/subscribe"
+  Subscribe = "/subscribe",
+  Contacts = "/#contacts",
+  ContactsThisPage = "#contacts",
+  Cart = "/cart",
+  Profile = "/profile",
 }
 
 export enum SearchFaceOrBody {

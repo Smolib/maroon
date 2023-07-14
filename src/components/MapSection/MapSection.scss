@@ -49,6 +49,10 @@ $size-of-mobile: 550px;
       margin-bottom: 18px;
     }
   }
+  &__mail-link {
+    color: var(--color-of-text);
+    text-decoration: none;
+  }
 }
 
 .map-area {
@@ -70,7 +74,7 @@ $size-of-mobile: 550px;
     margin: auto;
     top: -115px;
   }
-  &__map{
+  &__map {
     width: calc(82.1vw - 450px);
     max-width: 670px;
     height: 422px;

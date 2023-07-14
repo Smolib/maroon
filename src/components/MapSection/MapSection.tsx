@@ -15,7 +15,7 @@ function MapSection() {
           <dt className="contacts__dt">Телефон</dt>
           <dd className="contacts__dd">+7 (923) 888-90-60</dd>
           <dt className="contacts__dt">E-mail</dt>
-          <dd className="contacts__dd">info@maroon.ru</dd>
+          <dd className="contacts__dd"><a className="contacts__mail-link" href="mailto:info@maroon.ru">info@maroon.ru</a></dd>
         </dl>
         <SocialsList />
       </div>

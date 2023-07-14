@@ -1,0 +1,133 @@
+$size-of-tablet: 800px;
+$size-of-mobile: 700px;
+$size-of-max-width: 1366px;
+.nav {
+  &_type {
+    &_footer {
+      margin-right: auto;
+      margin-left: 39px;
+      @media screen and (max-width: $size-of-tablet) {
+        margin-left: 21px;
+      }
+      @media screen and (max-width: $size-of-mobile) {
+        margin-left: 0;
+      }
+    }
+  }
+  &__list {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    gap: 36px;
+    &_type {
+      &_header {
+        gap: 36px;
+        @media screen and (max-width: $size-of-tablet) {
+          flex-direction: column;
+          padding: 40px 0 54px;
+          gap: 26px;
+        }
+        @media screen and (max-width: $size-of-mobile) {
+          padding: 36px 0 47px;
+          gap: 21px;
+        }
+      }
+      &_footer {
+        gap: 41px;
+        @media screen and (max-width: $size-of-tablet) {
+          gap: 25px;
+        }
+        @media screen and (max-width: $size-of-mobile) {
+          max-width: 180px;
+          display: grid;
+          grid-template-columns: auto auto;
+          gap: 21px 29px;
+        }
+      }
+    }
+  }
+  &__item {
+    list-style: none;
+    padding: 0;
+    font-family: var(--font-of-text);
+    letter-spacing: 0;
+    font-size: calc(0.65vw + 7px);
+
+    @media screen and (max-width: $size-of-max-width) {
+      font-size: 16px;
+    }
+    &_type {
+      &_header {
+        @media screen and (max-width: $size-of-tablet) {
+          font-size: 32px;
+          letter-spacing: -1px;
+        }
+        @media screen and (max-width: $size-of-mobile) {
+          font-size: 28px;
+        }
+      }
+    }
+    &_type {
+      &_footer {
+        @media screen and (max-width: $size-of-tablet) {
+          font-size: 16px;
+        }
+        @media screen and (max-width: $size-of-mobile) {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  &__link {
+    color: var(--color-of-text);
+    text-decoration: none;
+    outline: none;
+    position: relative;
+    &::before,
+    &::after {
+      top: 0;
+      position: absolute;
+      font-size: 20px;
+      font-family: var(--font-of-text);
+      color: var(--color-of-text);
+      display: inline-block;
+      opacity: 0;
+      transition: transform 0.3s, opacity 0.2s;
+      @media screen and (max-width: $size-of-tablet) {
+        font-size: 32px;
+        top: 4px;
+      }
+      @media screen and (max-width: $size-of-mobile) {
+        font-size: 26px;
+      }
+    }
+    &::before {
+      left: -20px;
+      margin-right: 11px;
+      content: "[";
+      transform: translateX(20px);
+
+      @media screen and (max-width: $size-of-mobile) {
+        left: -10px;
+      }
+    }
+    &::after {
+      right: -20px;
+      margin-left: 11px;
+      content: "]";
+      transform: translateX(-20px);
+
+      @media screen and (max-width: $size-of-mobile) {
+        right: -10px;
+      }
+    }
+    &:hover,
+    &:focus {
+      &::before,
+      &::after {
+        opacity: 1;
+        transform: translateX(0px);
+      }
+    }
+  }
+}
