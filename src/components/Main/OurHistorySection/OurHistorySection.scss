@@ -22,6 +22,16 @@ $size-of-mobile: 450px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 110px auto;
+    padding: 0 58px;
+    box-sizing: border-box;
+    @media screen and (max-width: $size-of-tablet) {
+      margin: 91px auto;
+    }
+    @media screen and (max-width: $size-of-mobile) {
+      margin: 55px auto;
+      padding: 0 39px;
+    }
   }
 
   &__text {
@@ -29,15 +39,12 @@ $size-of-mobile: 450px;
     font-family: var(--font-of-title);
     font-size: 32px;
     line-height: 40px;
-    margin: 110px 58px 41px;
+    margin: 0 0 41px;
     font-weight: 500;
-    @media screen and (max-width: $size-of-tablet) {
-      margin-top: 91px;
-    }
     @media screen and (max-width: $size-of-mobile) {
       font-size: 22px;
       line-height: 28px;
-      margin: 55px 39px 23px
+      margin-bottom: 23px;
     }
   }
 }
