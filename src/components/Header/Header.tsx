@@ -1,5 +1,5 @@
 import "./Header.scss";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import logoSvg from "../../images/logo.svg";
 import profileSvg from "../../images/profile.svg";
@@ -15,6 +15,8 @@ function Header() {
   const [isMenuColored, setIsMenuColored] = useState(false);
   const [windowWidth, setWindowWidth] = useState(0);
   const [scroll, setScroll] = useState(0);
+
+  const headerRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
     setScroll(window.scrollY);
@@ -32,24 +34,30 @@ function Header() {
   }, []);
 
   useEffect(() => {
-    setWindowWidth(window.innerWidth);
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  useEffect(() => {
     setIsMenuColored(isMenuOpened);
   }, [isMenuOpened]);
+
+  const closeMenu = () => {
+    setIsMenuOpened(false);
+  };
+  useEffect(() => {
+    const onClick = (evt: MouseEvent) => {
+      if (
+        headerRef.current
+        && !headerRef.current.contains(evt.target as HTMLElement)
+      ) {
+        closeMenu();
+      }
+    };
+    document.addEventListener("click", onClick);
+    return () => document.removeEventListener("click", onClick);
+  }, []);
 
   function handleBurgerClick() {
     setIsMenuOpened(!isMenuOpened);
   }
   return (
-    <header
+    <header ref={headerRef}
       className={`header ${
         isMenuColored || scroll > 0 ? "header_colored" : ""
       }`}
@@ -65,7 +73,7 @@ function Header() {
           isMenuOpened ? "header__nav-area_open" : ""
         }`}
       >
-        <Nav type="header" />
+        <Nav type="header" onClickLinks={closeMenu}/>
         {windowWidth <= 800 && <SocialsList />}
       </div>
       <div className="header__buttons-area">

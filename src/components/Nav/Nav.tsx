@@ -1,23 +1,25 @@
 import "./Nav.scss";
 import { Link, useLocation } from "react-router-dom";
+import { MouseEventHandler } from "react";
 import { AppRoute } from "../../utils/consts";
 
 type NavProps = {
   type: "header" | "footer";
+  onClickLinks?: MouseEventHandler<HTMLAnchorElement>
 };
 
-function Nav({ type }: NavProps) {
+function Nav({ type, onClickLinks }: NavProps) {
   const { pathname } = useLocation();
   return (
     <nav className={`nav nav_type_${type}`}>
       <ul className={`nav__list nav__list_type_${type}`}>
         <li className={`nav__item nav__item_type_${type}`}>
-          <Link className={`nav__link nav__link_type_${type}`} to={AppRoute.Catalog}>
+          <Link onClick={onClickLinks} className={`nav__link nav__link_type_${type}`} to={AppRoute.Catalog}>
             Каталог
           </Link>
         </li>
         <li className={`nav__item nav__item_type_${type}`}>
-          <Link
+          <Link onClick={onClickLinks}
             className={`nav__link nav__link_type_${type}`}
             to={
               pathname === AppRoute.Main
@@ -30,7 +32,7 @@ function Nav({ type }: NavProps) {
         </li>
         {type === "footer" && (
           <li className={`nav__item nav__item_type_${type}`}>
-            <Link
+            <Link onClick={onClickLinks}
               className={`nav__link nav__link_type_${type}`}
               to={AppRoute.ContactsThisPage}
             >
@@ -39,7 +41,7 @@ function Nav({ type }: NavProps) {
           </li>
         )}
         <li className={`nav__item nav__item_type_${type}`}>
-          <Link
+          <Link onClick={onClickLinks}
             className={`nav__link nav__link_type_${type}`}
             to={
               pathname === AppRoute.Main || pathname === AppRoute.Catalog
