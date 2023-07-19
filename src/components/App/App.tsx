@@ -11,7 +11,7 @@ import ItemPage from "../ItemPage/ItemPage";
 
 function App() {
   return (
-    <HistoryRouter history={browserHistory} basename={""}>
+    <HistoryRouter history={browserHistory} basename={"maroon"}>
       <ScrollToTop />
       <Routes>
         <Route path={AppRoute.Main} element={<Layout />}>
