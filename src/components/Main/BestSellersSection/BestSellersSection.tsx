@@ -1,12 +1,12 @@
 import useCurrentWidth from "../../../hooks/useCurrentWidth";
 import { AppRoute } from "../../../utils/consts";
-import LinkButton from "../../utils-components/LinkButton/LinkButton";
+import AnimatedButton from "../../utils-components/AnimatedButton/AnimatedButton";
 import "./BestSellersSection.scss";
 import SwiperBestsellers from "./SwiperBestsellers/SwiperBestsellers";
 
 function BestSellersSection() {
   const width = useCurrentWidth();
-  const button = <LinkButton onClick={AppRoute.Catalog} text={"Смотреть все"}/>;
+  const button = <AnimatedButton onClick={AppRoute.Catalog} text={"Смотреть все"} />;
   return (
     <section className="bestsellers">
       <div className="bestsellers__description-area">

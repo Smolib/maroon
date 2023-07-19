@@ -1,0 +1,120 @@
+$size-of-tablet: 900px;
+$size-of-mobile: 700px;
+.item-section {
+  display: grid;
+  grid-template-columns: 53.6% minmax(200px, 31.5%);
+  gap: 70px;
+  margin: auto;
+  max-width: 1366px;
+  padding: 142px 93px 0 98px;
+  box-sizing: border-box;
+  width: 100%;
+  @media screen and (max-width: $size-of-tablet) {
+    grid-template-columns: 100%;
+    padding: 142px 45px 0;
+    gap: 54px;
+  }
+  @media screen and (max-width: $size-of-mobile) {
+    padding: 116px 15px 0;
+    gap: 45px;
+  }
+  &__info-area {
+    padding: 41px 0;
+    box-sizing: border-box;
+    @media screen and (max-width: $size-of-tablet) {
+      padding: 0;
+    }
+  }
+  &__image {
+    width: 100%;
+    max-height: 647px;
+    object-fit: cover;
+    @media screen and (max-width: $size-of-tablet) {
+      max-height: 470px;
+    }
+    @media screen and (max-width: $size-of-mobile) {
+      max-height: 260px;
+    }
+  }
+  &__title {
+    margin: 0;
+    font-family: var(--font-of-title);
+    font-size: 31px;
+    @media screen and (max-width: $size-of-mobile) {
+      font-size: 28px;
+      letter-spacing: -1px;
+    }
+  }
+  &__short-description {
+    margin: 7px 0 0;
+    color: var(--color-of-gray-text);
+    font-size: 16px;
+  }
+  &__description-area {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    flex-direction: column;
+    padding: 36px 0 39px;
+    border-bottom: 1px solid var(--color-of-border-button);
+    @media screen and (max-width: $size-of-mobile) {
+      padding: 20px 0 33px;
+    }
+  }
+  &__description {
+    margin: 0;
+    width: 75%;
+    line-height: 23px;
+    @media screen and (max-width: $size-of-tablet) {
+      width: 100%;
+    }
+  }
+  &__form {
+    margin-top: 43px;
+  }
+  &__variants {
+    &-area {
+      display: flex;
+      flex-direction: row;
+      gap: 17px;
+      @media screen and (max-width: $size-of-mobile) {
+        margin-top: -5px;
+      }
+    }
+    &-name {
+      font-size: 18px;
+      font-weight: 500;
+      @media screen and (max-width: $size-of-mobile) {
+        font-size: 16px;
+      }
+    }
+    &-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: row;
+      gap: 25px;
+    }
+  }
+  &__price-area {
+    padding-top: 41px;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    @media screen and (max-width: $size-of-mobile) {
+      padding-top: 47px;
+      gap: 34px;
+    }
+  }
+  &__price {
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 145%;
+    margin-right: 5px;
+    @media screen and (max-width: $size-of-mobile) {
+      font-size: 22px;
+    }
+  }
+}

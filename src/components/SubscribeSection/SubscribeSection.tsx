@@ -5,7 +5,7 @@ import image3 from "../../images/subscribe03.png";
 import image4 from "../../images/subscribe04.png";
 import image5 from "../../images/subscribe05.png";
 import image6 from "../../images/subscribe06.png";
-import LinkButton from "../utils-components/LinkButton/LinkButton";
+import AnimatedButton from "../utils-components/AnimatedButton/AnimatedButton";
 import { AppRoute } from "../../utils/consts";
 
 function SubscribeSection() {
@@ -32,7 +32,7 @@ function SubscribeSection() {
           </a>{" "}
           и&nbsp;узнавайте о&nbsp;новиках и&nbsp;акциях первыми
         </p>
-        <LinkButton text={"Подписаться"} onClick={AppRoute.Subscribe} />
+        <AnimatedButton text={"Подписаться"} onClick={AppRoute.Subscribe} />
       </div>
     </section>
   );

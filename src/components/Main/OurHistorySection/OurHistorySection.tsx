@@ -1,5 +1,5 @@
 import { AppRoute } from "../../../utils/consts";
-import LinkButton from "../../utils-components/LinkButton/LinkButton";
+import AnimatedButton from "../../utils-components/AnimatedButton/AnimatedButton";
 import "./OurHistorySection.scss";
 
 function OurHistorySection() {
@@ -11,7 +11,7 @@ function OurHistorySection() {
           и&nbsp;приятным ритуалом для всех, кто хочет заботиться о&nbsp;себе
           и&nbsp;своем теле”
         </p>
-        <LinkButton text={"Наша история"} onClick={AppRoute.AboutThisPage} />
+        <AnimatedButton text={"Наша история"} onClick={AppRoute.AboutThisPage} />
       </div>
     </section>
   );

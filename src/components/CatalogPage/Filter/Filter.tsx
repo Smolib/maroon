@@ -6,7 +6,7 @@ import FilterList from "../FilterList/FilterList";
 import "./Filter.scss";
 import SearchDataContext from "../../../context/SearchDataContext";
 import { TypeOfSettingsFilter } from "../../../types/filter";
-import LinkButton from "../../utils-components/LinkButton/LinkButton";
+import AnimatedButton from "../../utils-components/AnimatedButton/AnimatedButton";
 
 type FilterProps = {
   setIsMenuOpened: Dispatch<SetStateAction<boolean>>;
@@ -40,8 +40,8 @@ function Filter({
         />
       ))}
       <div className="filter__button-area">
-        <LinkButton text={"Применить"} onClick={handleSubmit} />
-        <LinkButton text={"Сбросить"} onClick={handleReset} />
+        <AnimatedButton text={"Применить"} onClick={handleSubmit} typeOfButton={"submit"} />
+        <AnimatedButton text={"Сбросить"} onClick={handleReset} typeOfButton={"reset"} />
       </div>
     </form>
   );

@@ -1,11 +1,9 @@
 import {
-  Dispatch,
-  SetStateAction,
-  useEffect,
-  useState,
+  Dispatch, SetStateAction, useEffect, useState,
 } from "react";
 import { TypeOfFilter, TypeOfSettingsFilter } from "../../../types/filter";
 import { TypeOfItem } from "../../../types/item";
+import RadioInputListItem from "../../utils-components/RadioInputListItem/RadioInputListItem";
 
 type FilterItemProps = {
   name: TypeOfItem["category"] | TypeOfItem["skin"];
@@ -28,7 +26,8 @@ function FilterItem({
   useEffect(() => {
     setIsChoose((choosenValues[useFor] as TypeOfFilter["keys"]).includes(name));
   }, [choosenValues]);
-  const handleClick = () => {
+  const handleChangeInput = () => {
+    setIsChoose(!isChoose);
     if (isChoose) {
       const newData = (choosenValues[useFor] as TypeOfFilter["keys"]).filter(
         (i) => i !== name,
@@ -44,26 +43,14 @@ function FilterItem({
       });
     }
   };
-  const handleChangeInput = () => {
-    setIsChoose(!isChoose);
-  };
   return (
-    <li className="filter-list__item">
-      <input
-        className="filter-list__input"
-        type="checkbox"
-        id={`${title}-${name}`}
-        checked={isChoose}
-        onChange={handleChangeInput}
-      />
-      <label
-        onClick={handleClick}
-        className="filter-list__label"
-        htmlFor={`${title}-${name}`}
-      >
-        {name}
-      </label>
-    </li>
+    <RadioInputListItem
+      name={name}
+      title={title}
+      handleChangeInput={handleChangeInput}
+      isChoose={isChoose}
+      type={"checkbox"}
+    />
   );
 }
 

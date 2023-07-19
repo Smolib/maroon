@@ -77,8 +77,8 @@ function SwiperSection({ title, items }: SwiperSectionProps) {
               name={item.name}
               image={item.image}
               shortDescription={item.shortDescription}
-              price={item.price}
-              volume={item.volume}
+              price={item.variants[0].price}
+              volume={item.variants[0].volume}
               units={item.units}
               id={item.id}
             />

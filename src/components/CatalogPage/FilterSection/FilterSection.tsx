@@ -4,7 +4,7 @@ import "./FilterSection.scss";
 import close from "../../../images/close.svg";
 import { TypeOfSettingsFilter } from "../../../types/filter";
 import { FilterDefaultData } from "../../../utils/consts";
-import LinkButton from "../../utils-components/LinkButton/LinkButton";
+import AnimatedButton from "../../utils-components/AnimatedButton/AnimatedButton";
 
 function FilterSection() {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
@@ -23,7 +23,7 @@ function FilterSection() {
           <img alt="Кнопка меню" src={close} />
         </button>
       ) : (
-        <LinkButton text={"Фильтр"} onClick={handleBurgerClick} />
+        <AnimatedButton text={"Фильтр"} onClick={handleBurgerClick} typeOfButton={"button"} />
       )}
       {isMenuOpened && (
         <div className="filter-section__filter-area">

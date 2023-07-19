@@ -8,7 +8,7 @@ import introPic2Tablet from "../../../images/intro-pic2-tablet.png";
 import introPic1Mobile from "../../../images/intro-pic1-mobile.png";
 import introPic2Mobile from "../../../images/intro-pic2-mobile.png";
 import arrow from "../../../images/arrow.svg";
-import LinkButton from "../../utils-components/LinkButton/LinkButton";
+import AnimatedButton from "../../utils-components/AnimatedButton/AnimatedButton";
 import { AppRoute } from "../../../utils/consts";
 
 function IntroSection() {
@@ -69,7 +69,7 @@ function IntroSection() {
           <p className="intro__description">
             Натуральная косметика для&nbsp;бережного ухода за&nbsp;кожей
           </p>
-          <LinkButton text={"Подробнее"} onClick={AppRoute.AboutThisPage} />
+          <AnimatedButton text={"Подробнее"} onClick={AppRoute.AboutThisPage} />
         </div>
         <Link className="intro__link" to={AppRoute.Catalog}>
           <figure className="intro__figure">
